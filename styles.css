@@ -16,7 +16,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--sans);background:linear-gradient(rgba(247,241,231,.90),rgba(247,241,231,.90)),url("assets/sfondo-san-castrese.jpg") center 18%/cover fixed no-repeat;color:var(--ink);line-height:1.6;overflow-x:hidden}
+body{margin:0;font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
@@ -36,10 +36,13 @@ img{max-width:100%;display:block}
 .main-nav a{position:relative}.main-nav a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--wine);transition:.25s}.main-nav a:hover::after{width:100%}
 .nav-cta{border:1px solid rgba(115,28,43,.28);padding:11px 18px;border-radius:999px;color:var(--wine)}
 .menu-toggle{display:none;border:0;background:transparent;width:44px;height:44px;position:relative;z-index:3}.menu-toggle span{position:absolute;width:24px;height:1.5px;background:var(--ink);left:10px;transition:.3s}.menu-toggle span:first-child{top:17px}.menu-toggle span:last-child{top:25px}.menu-toggle[aria-expanded="true"] span:first-child{transform:rotate(45deg);top:21px}.menu-toggle[aria-expanded="true"] span:last-child{transform:rotate(-45deg);top:21px}
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:135px 0 74px;background:linear-gradient(135deg,rgba(250,245,237,.94) 0%,rgba(240,228,212,.92) 58%,rgba(234,215,194,.90) 100%);overflow:hidden}
+.hero{min-height:100svh;position:relative;display:flex;align-items:center;padding:135px 0 82px;background:
+  linear-gradient(90deg,rgba(247,241,231,.99) 0%,rgba(247,241,231,.97) 34%,rgba(247,241,231,.82) 48%,rgba(247,241,231,.30) 67%,rgba(34,20,20,.10) 100%),
+  url("assets/sfondo-san-castrese.jpg") 90% 43%/auto 118% no-repeat,
+  #e8ded2;overflow:hidden}
 .hero::after{content:"";position:absolute;right:-12vw;top:-22vh;width:62vw;height:145vh;border:1px solid rgba(115,28,43,.08);border-radius:50%;transform:rotate(17deg)}
 .hero-orb{position:absolute;border-radius:50%;filter:blur(1px)}.hero-orb-a{width:390px;height:390px;background:rgba(194,160,103,.12);left:-150px;top:8%}.hero-orb-b{width:280px;height:280px;background:rgba(115,28,43,.07);right:30%;bottom:-80px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;position:relative;z-index:2}
+.hero-grid{display:block;position:relative;z-index:2}.hero-copy{max-width:720px}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);margin-bottom:20px}.eyebrow i{width:26px;height:1px;background:var(--gold)}.eyebrow.dark{color:var(--ink)}.eyebrow.light{color:var(--gold-light)}
 h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:.98}
 h1{font-size:clamp(56px,6vw,92px);letter-spacing:-.045em;margin-bottom:26px;max-width:850px}h1 em,h2 em{font-weight:500;color:var(--wine);font-style:italic}
@@ -244,5 +247,27 @@ h1{font-size:clamp(56px,6vw,92px);letter-spacing:-.045em;margin-bottom:26px;max-
   .entry-card strong{font-size:23px}.inside-visual{min-height:385px}.inside-caption strong{font-size:32px}.uco-copy h2{font-size:37px}.mobile-cta{left:7px;right:7px;bottom:7px}.mobile-cta a{font-size:10px}
 }
 
-/* V3.1 · sfondo con immagine reale di San Castrese */
-@media(max-width:980px){body{background-attachment:scroll;background-position:center top}}
+
+/* V3.2 · la foto reale di San Castrese è lo sfondo protagonista della home */
+@media(min-width:981px){
+  .hero-copy{padding:28px 34px 30px 0;text-shadow:0 1px 0 rgba(255,255,255,.35)}
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(255,255,255,.10),transparent 28%,transparent 72%,rgba(41,25,22,.08));z-index:1}
+}
+@media(max-width:980px){
+  .hero-grid{display:block}
+  .hero-copy{max-width:680px}
+}
+@media(max-width:680px){
+  .hero{min-height:auto;display:block;padding:58vh 0 58px;background:
+    linear-gradient(to bottom,rgba(247,241,231,.02) 0%,rgba(247,241,231,.04) 34%,rgba(247,241,231,.62) 55%,rgba(247,241,231,.96) 70%,var(--cream) 100%),
+    url("assets/sfondo-san-castrese.jpg") center 6%/112% auto no-repeat,
+    var(--cream)}
+  .hero::after,.hero-orb{display:none}
+  .hero-copy{max-width:none;padding:24px 18px 20px;background:rgba(255,253,249,.76);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.46);box-shadow:0 22px 55px rgba(54,35,31,.12)}
+  .hero-copy h1{margin-bottom:20px}
+  .hero-copy>p{color:#4c433e}
+}
+@media(max-width:390px){
+  .hero{padding-top:54vh;background-size:118% auto;background-position:center 4%}
+  .hero-copy{padding:22px 15px 18px}
+}
