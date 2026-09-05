@@ -68,3 +68,122 @@ h1{font-size:clamp(56px,6vw,92px);letter-spacing:-.045em;margin-bottom:26px;max-
 @media(max-width:680px){
   .container,.nav-shell{width:min(100% - 28px,1180px)}.brand-copy strong{font-size:17px}.brand-copy small{font-size:8px}.brand-mark{width:44px;height:44px}.section{padding:82px 0}.hero{padding:100px 0 70px}.hero-grid{gap:42px}.hero-copy h1{font-size:50px}.hero-copy>p{font-size:15px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-facts{gap:8px}.hero-facts strong{font-size:17px}.hero-facts span{font-size:8px}.hero-visual{min-height:480px}.hero-frame{inset:0 10px 0 28px;border-radius:170px 170px 15px 15px}.floating-seal{width:92px;height:92px;left:2px}.floating-seal strong{font-size:26px}.hero-caption{left:24px;right:24px;bottom:22px}.hero-caption strong{font-size:30px}.scroll-cue{display:none}.manifesto{padding:75px 0}.manifesto-grid{grid-template-columns:1fr;gap:18px}.section-number{display:none}.manifesto-note{grid-column:auto;margin-top:5px;padding-left:20px}.manifesto h2,.section-head h2,.association h2,.feature-copy h2,.territory h2,.contact h2,.archive-top h2{font-size:44px}.section-head{margin-bottom:42px}.timeline::before{left:9px}.timeline-item{grid-template-columns:25px 1fr;min-height:auto;padding-bottom:40px}.timeline-year{grid-column:2;text-align:left;padding:0 0 3px;font-size:19px}.timeline-dot{grid-column:1;grid-row:1/3;margin:8px 0 0 4px}.timeline-card{grid-column:2;padding:0 0 0 8px}.timeline-card h3{font-size:29px}.timeline-item.featured .timeline-card{padding:20px}.photo-stack{min-height:500px}.photo-card-main{right:36px}.quote-card{width:225px;padding:20px}.values-grid{grid-template-columns:1fr}.tradition-card{grid-template-columns:1fr;padding:25px}.date-badge{width:78px;height:86px}.date-badge strong{font-size:37px}.tradition-strip{grid-template-columns:1fr 1fr}.tradition-strip>div:nth-child(2){border-right:0}.gallery-grid{grid-template-columns:1fr;grid-auto-rows:260px}.gallery-item:nth-child(n){grid-column:auto}.archive-top{margin-bottom:35px}.feature-number{font-size:92px}.feature-copy blockquote{font-size:24px}.event-row{grid-template-columns:68px 1fr 38px;gap:14px;padding:22px 0}.event-date strong{font-size:27px}.event-copy h3{font-size:23px}.map-art{min-height:420px}.contact{padding-bottom:0}.contact-shell{width:100%;padding:54px 22px}.contact-actions{display:grid}.footer-top{flex-direction:column;gap:26px}.footer-top nav{justify-content:flex-start;gap:16px}.footer-bottom{flex-direction:column}.lightbox{height:72vh}.lightbox-image{height:calc(100% - 120px)}.lightbox-caption{height:120px;grid-template-columns:1fr}.lightbox-caption span{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-photo,.gallery-image,.btn,.tradition-card{transition:none}}
+
+
+/* V1.1 — responsive hardening + permanent ReLong credit */
+.powered-by a{color:var(--gold-light);font-weight:700;transition:opacity .2s ease}
+.powered-by a:hover{opacity:.78}
+
+@media(max-width:980px){
+  .site-header{background:rgba(247,241,231,.92);backdrop-filter:blur(18px);border-bottom:1px solid rgba(33,27,24,.08)}
+  .main-nav{z-index:1;padding:92px 28px 42px;overflow-y:auto;overscroll-behavior:contain}
+  .main-nav a{width:min(420px,100%);text-align:center;padding:8px 12px}
+  .main-nav .nav-cta{padding:13px 22px}
+  .hero-grid,.association-grid,.territory-grid,.feature-grid,.contact-shell{min-width:0}
+  .hero-copy,.association-copy,.territory-copy,.feature-copy,.contact-copy{min-width:0}
+  .gallery-item,.tradition-card,.event-row{min-width:0}
+}
+
+@media(max-width:680px){
+  html{scroll-padding-top:78px}
+  body{font-size:15px}
+  .nav-shell{height:72px}
+  .brand{gap:10px;max-width:calc(100% - 54px)}
+  .brand-copy{min-width:0}
+  .brand-copy strong{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand-copy small{letter-spacing:.12em}
+  .brand-mark{flex:0 0 42px;width:42px;height:42px}
+  .main-nav{font-size:32px;gap:12px;padding-top:88px}
+
+  .hero{padding:92px 0 56px}
+  .hero-copy h1{font-size:clamp(39px,12vw,50px);line-height:1.01;letter-spacing:-.035em}
+  .hero-copy h1 br{display:none}
+  .hero-copy>p{line-height:1.65;margin-bottom:26px}
+  .hero-actions .btn{width:100%;min-height:52px}
+  .hero-facts{grid-template-columns:1fr;gap:0;margin-top:34px;padding-top:0;border-top:0}
+  .hero-facts div{padding:13px 0;border-top:1px solid rgba(33,27,24,.12)}
+  .hero-facts strong{font-size:19px}
+  .hero-facts span{font-size:9px;margin-top:1px}
+  .hero-visual{min-height:430px}
+  .hero-frame{inset:0 4px 0 22px;border-radius:150px 150px 14px 14px}
+  .floating-seal{width:82px;height:82px;left:0;top:47%}
+  .floating-seal strong{font-size:23px}
+  .floating-seal span{font-size:6px}
+  .hero-caption{left:20px;right:18px;bottom:18px}
+  .hero-caption strong{font-size:28px}
+  .hero-caption small{max-width:240px;line-height:1.35}
+
+  .manifesto h2,.section-head h2,.association h2,.feature-copy h2,.territory h2,.contact h2,.archive-top h2{font-size:clamp(38px,11.5vw,44px);line-height:1.01}
+  .manifesto h2 br,.section-head h2 br,.association h2 br,.feature-copy h2 br,.territory h2 br,.contact h2 br,.archive-top h2 br{display:none}
+  .manifesto .lead,.association-copy>.lead{font-size:17px}
+
+  .timeline-item{grid-template-columns:22px minmax(0,1fr)}
+  .timeline::before{left:8px}
+  .timeline-card{min-width:0;padding-left:10px}
+  .timeline-card h3{font-size:27px;line-height:1.03}
+  .timeline-card p{font-size:13px;line-height:1.65}
+  .timeline-item.featured .timeline-card{padding:18px}
+
+  .photo-stack{min-height:450px}
+  .photo-card-main{inset:0 22px 58px 0}
+  .quote-card{width:min(220px,72vw);right:0;padding:18px}
+  .quote-card p{font-size:18px}
+  .values-grid>div{padding:17px}
+
+  .tradition-card{gap:20px;padding:22px}
+  .tradition-card h3{font-size:29px;line-height:1.02}
+  .tradition-strip{grid-template-columns:1fr}
+  .tradition-strip>div{border-right:0!important}
+
+  .filter-pills{display:flex;overflow-x:auto;gap:8px;padding:2px 0 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .filter-pills::-webkit-scrollbar{display:none}
+  .filter-pills button{flex:0 0 auto;min-height:42px;padding-inline:15px}
+  .gallery-grid{gap:12px;grid-auto-rows:240px}
+  .gallery-item{border-radius:2px}
+
+  .event-row{grid-template-columns:58px minmax(0,1fr) 28px;gap:12px}
+  .event-copy h3{font-size:21px;line-height:1.05}
+  .event-copy p{font-size:12px}
+
+  .map-art{min-height:360px;border-radius:42% 42% 10px 10px}
+  .map-art svg{width:110%;max-width:none}
+  .map-label{left:22px;bottom:20px}
+  .place-list button{min-height:52px;align-items:center;gap:12px}
+  .place-list button span{text-align:right;line-height:1.3}
+
+  .contact-shell{padding:46px 18px}
+  .contact-card{padding:26px 22px;min-height:250px}
+  .contact-card h3{font-size:28px}
+  .contact-actions .btn{width:100%;min-height:52px;padding:0 16px;text-align:center}
+
+  .footer-top nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:10px 18px}
+  .footer-top nav a{padding:6px 0}
+  .footer-bottom{gap:10px;align-items:flex-start;line-height:1.6}
+  .powered-by{font-size:10px}
+
+  .lightbox{width:94vw;height:78dvh;max-height:720px}
+  .lightbox-close{width:46px;height:46px;right:10px;top:10px;background:rgba(0,0,0,.45)}
+  .lightbox-image{height:calc(100% - 112px)}
+  .lightbox-caption{height:112px;padding:16px 18px;align-content:center}
+  .lightbox-caption strong{font-size:22px;line-height:1.05}
+}
+
+@media(max-width:390px){
+  .container,.nav-shell{width:calc(100% - 22px)}
+  .brand-copy strong{font-size:14px}
+  .brand-copy small{font-size:7px}
+  .hero{padding-top:86px}
+  .hero-copy h1{font-size:38px}
+  .hero-copy>p{font-size:14px}
+  .hero-visual{min-height:385px}
+  .hero-frame{inset:0 0 0 18px;border-radius:136px 136px 12px 12px}
+  .floating-seal{width:74px;height:74px}
+  .hero-caption strong{font-size:26px}
+  .manifesto h2,.section-head h2,.association h2,.feature-copy h2,.territory h2,.contact h2,.archive-top h2{font-size:37px}
+  .section{padding:70px 0}
+  .photo-stack{min-height:420px}
+  .quote-card{width:205px}
+  .gallery-grid{grid-auto-rows:220px}
+  .map-art{min-height:330px}
+  .footer-brand strong{font-size:17px}
+}
