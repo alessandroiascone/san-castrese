@@ -271,3 +271,8 @@ h1{font-size:clamp(56px,6vw,92px);letter-spacing:-.045em;margin-bottom:26px;max-
   .hero{padding-top:54vh;background-size:118% auto;background-position:center 4%}
   .hero-copy{padding:22px 15px 18px}
 }
+
+/* V3.4 · rimozione sottotitolo hero e adattamento spazi */
+.hero-copy h1{margin-top:0}
+@media(max-width:680px){.hero-copy{padding-top:18px}}
+@media(max-width:390px){.hero-copy{padding-top:16px}}
