@@ -1,3 +1,4 @@
+// Associazione San Castrese · V2
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
@@ -87,3 +88,11 @@ placeButtons.forEach(btn => btn.addEventListener('click', () => {
 // Set current year.
 const yearEl = document.querySelector('#year');
 if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+
+// V2: close menu on orientation changes and keep touch behavior stable.
+window.addEventListener('orientationchange', () => {
+  menuToggle?.setAttribute('aria-expanded','false');
+  mainNav?.classList.remove('open');
+  document.body.style.overflow = '';
+});
