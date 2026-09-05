@@ -63,7 +63,7 @@ h1{font-size:clamp(56px,6vw,92px);letter-spacing:-.045em;margin-bottom:26px;max-
 .events{background:var(--cream)}.event-list{border-top:1px solid var(--line)}.event-row{display:grid;grid-template-columns:120px 1fr 50px;gap:30px;align-items:center;padding:28px 10px;border-bottom:1px solid var(--line);transition:.25s}.event-row:hover{background:rgba(255,255,255,.45);padding-left:22px}.event-date{display:flex;flex-direction:column;align-items:center;border-right:1px solid var(--line)}.event-date strong{font-family:var(--serif);font-size:36px;line-height:1;color:var(--wine)}.event-date span{font-size:8px;letter-spacing:.15em;color:var(--muted);margin-top:5px}.event-copy small{font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:var(--gold)}.event-copy h3{font-size:27px;margin:3px 0 4px}.event-copy p{font-size:12px;color:var(--muted);margin:0}.event-row>a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}.event-row.highlight{background:rgba(115,28,43,.045)}
 .territory{background:#efe4d5}.territory-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}.territory-copy>p{font-size:14px;color:var(--muted);max-width:520px}.place-list{margin-top:34px;border-top:1px solid var(--line)}.place-list button{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;text-align:left;padding:15px 2px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;cursor:pointer;color:var(--ink)}.place-list button span{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:500}.place-list button.active{color:var(--wine)}.map-art{position:relative;background:#e6d8c6;min-height:570px;border-radius:50% 50% 10px 10px;overflow:hidden;display:grid;place-items:center}.map-art svg{width:92%;height:auto}.coast{fill:rgba(255,253,249,.55);stroke:#c6b196;stroke-width:1.4}.map-line{fill:none;stroke:var(--gold);stroke-width:1.5;stroke-dasharray:5 7}.pin circle:first-child{fill:#e5d4be;stroke:var(--wine);stroke-width:1}.pin circle:nth-child(2){fill:var(--wine)}.pin text{text-anchor:middle;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:1.1px;fill:#55463e}.pin-marano circle:first-child{fill:var(--wine);stroke:var(--wine)}.pin-marano circle:nth-child(2){fill:var(--gold-light)}.pin-marano text{fill:var(--wine);font-size:11px}.pin{transition:.25s;transform-box:fill-box;transform-origin:center}.pin.active{filter:drop-shadow(0 5px 10px rgba(115,28,43,.25))}.map-label{position:absolute;left:38px;bottom:35px;display:flex;flex-direction:column}.map-label span{font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--wine)}.map-label strong{font-family:var(--serif);font-size:25px}
 .contact{background:var(--ink);color:white;padding-bottom:72px}.contact-shell{background:var(--wine);padding:66px;display:grid;grid-template-columns:1fr 360px;gap:75px;align-items:center;position:relative;overflow:hidden}.contact-shell::before{content:"";position:absolute;width:380px;height:380px;border:1px solid rgba(255,255,255,.09);border-radius:50%;left:-160px;bottom:-230px}.contact h2 em{color:var(--gold-light)}.contact-copy>p{max-width:640px;color:#dbcacc}.contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.contact-card{background:#fff;color:var(--ink);padding:34px;position:relative;min-height:280px}.contact-card-label{font-size:8px;text-transform:uppercase;letter-spacing:.17em;color:var(--gold);font-weight:700}.contact-card h3{font-size:31px;margin:6px 0 2px}.contact-card p{font-size:12px;color:var(--muted)}.contact-card hr{border:0;border-top:1px solid var(--line);margin:24px 0}.mini-seal{position:absolute;right:24px;bottom:18px;width:50px;height:50px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:18px;color:var(--wine)}
-.site-footer{background:var(--ink);color:white;padding:24px 0 28px}.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}.footer-brand{display:flex;align-items:center;gap:13px}.brand-mark.small{width:42px;height:42px;flex-basis:42px;background:#fff;color:#fff}.footer-brand>div{display:flex;flex-direction:column}.footer-brand strong{font-family:var(--serif);font-size:19px}.footer-brand small{font-size:8px;text-transform:uppercase;letter-spacing:.14em;color:#9f9490}.footer-top nav{display:flex;gap:24px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#c9c0bb}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;color:#9f9490;font-size:10px;text-transform:uppercase;letter-spacing:.08em}.footer-bottom p{margin:0}
+.site-footer{background:var(--ink);color:white;padding:24px 0 28px}.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}.footer-brand{display:flex;align-items:center;gap:13px}.brand-mark.small{width:42px;height:42px;flex-basis:42px;background:#fff;color:#fff}.footer-brand>div{display:flex;flex-direction:column}.footer-brand strong{font-family:var(--serif);font-size:19px}.footer-brand small{font-size:8px;text-transform:uppercase;letter-spacing:.14em;color:#9f9490}.footer-top nav{display:flex;gap:24px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#c9c0bb}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;color:#877d78;font-size:9px;text-transform:uppercase;letter-spacing:.08em}.footer-bottom p{margin:0}
 .lightbox{border:0;padding:0;width:min(900px,92vw);height:min(760px,88vh);background:#171210;color:white;box-shadow:0 30px 120px rgba(0,0,0,.55)}.lightbox::backdrop{background:rgba(15,8,8,.8);backdrop-filter:blur(8px)}.lightbox-close{position:absolute;z-index:3;right:14px;top:12px;width:42px;height:42px;border:1px solid rgba(255,255,255,.4);border-radius:50%;background:rgba(0,0,0,.2);color:white;font-size:26px;cursor:pointer}.lightbox-image{height:calc(100% - 95px);background-size:cover;background-position:center;background-color:#44302d}.lightbox-caption{height:95px;padding:18px 24px;display:grid;grid-template-columns:100px 1fr auto;align-items:center}.lightbox-caption small{font-size:10px;color:var(--gold)}.lightbox-caption strong{font-family:var(--serif);font-size:25px}.lightbox-caption span{font-size:9px;text-transform:uppercase;letter-spacing:.11em;color:#817873}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}.reveal-delay{transition-delay:.12s}
 @media(max-width:980px){
@@ -416,11 +416,98 @@ body{background:radial-gradient(circle at top left,rgba(225,201,159,.18),transpa
 }
 
 
-/* V5.1.1 · final QA polish */
-.brand-mark::before,.brand-mark::after{display:none!important}
-.treasure-relic-icon{width:112px;height:112px;z-index:2;filter:drop-shadow(0 12px 24px rgba(0,0,0,.26))}
-.feature-highlight{margin:24px 0;padding:18px 20px;border-left:3px solid var(--gold);background:rgba(255,255,255,.06);font-family:var(--serif);font-size:21px;line-height:1.25;color:#f0e2cf}
-.gallery-item.crop-a .gallery-image{background-position:center 30%}
-.gallery-item.crop-b .gallery-image{background-position:62% 34%}
-.gallery-item.crop-c .gallery-image{background-position:center 68%}
-@media(max-width:680px){.treasure-relic-icon{width:86px;height:86px}.feature-highlight{font-size:18px}}
+/* =========================
+   V5.2 · home ripulita e sfondo foto ripristinato
+   ========================= */
+.hero{background:
+  linear-gradient(90deg,rgba(247,241,231,.96) 0%,rgba(247,241,231,.92) 28%,rgba(247,241,231,.62) 48%,rgba(247,241,231,.18) 68%,rgba(20,10,10,.16) 100%),
+  url("assets/pattern-san-castrese.svg") 82% 18%/320px 320px no-repeat,
+  url("assets/sfondo-san-castrese.jpg") 88% 36%/auto 122% no-repeat,
+  #e8ded2}
+.hero-copy{max-width:740px}
+.site-hub{padding-top:78px}
+.home-promo h2 em{margin-left:.18em}
+@media(max-width:680px){
+  .hero{min-height:auto;display:block;padding:56vh 0 48px;background:
+    linear-gradient(to bottom,rgba(247,241,231,.06) 0%,rgba(247,241,231,.10) 22%,rgba(247,241,231,.45) 48%,rgba(247,241,231,.90) 66%,#f7f1e7 100%),
+    url("assets/pattern-san-castrese.svg") center 34%/180px 180px no-repeat,
+    url("assets/sfondo-san-castrese.jpg") center 4%/cover no-repeat,
+    #f7f1e7}
+  .hero-copy{max-width:none;padding:24px 18px 20px;background:rgba(255,253,249,.86);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.52);box-shadow:0 22px 55px rgba(54,35,31,.14)}
+  .home-hero .hero-facts{margin-top:24px}
+  .site-hub{padding-top:62px}
+}
+@media(max-width:390px){
+  .hero{padding-top:52vh;background:
+    linear-gradient(to bottom,rgba(247,241,231,.08) 0%,rgba(247,241,231,.12) 24%,rgba(247,241,231,.48) 50%,rgba(247,241,231,.92) 68%,#f7f1e7 100%),
+    url("assets/pattern-san-castrese.svg") center 32%/160px 160px no-repeat,
+    url("assets/sfondo-san-castrese.jpg") center 3%/cover no-repeat,
+    #f7f1e7}
+  .hero-copy{padding:22px 15px 18px}
+  .home-promo h2 em{margin-left:.14em}
+}
+
+/* =========================
+   V5.3 · foto reali, sede esatta e mobile refinements
+   ========================= */
+.local-photo{background-size:cover;background-position:center}
+.hq-photo.local-photo{background-position:center 48%}
+.inside-photo.local-photo{background-position:center 28%}
+
+.real-gallery{background:linear-gradient(180deg,#f4ebdf,#efe2d2)}
+.real-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.real-photo{margin:0;position:relative;min-height:360px;border-radius:26px;overflow:hidden;background:#d7c7b5;box-shadow:0 24px 55px rgba(44,25,20,.12),inset 0 1px 0 rgba(255,255,255,.5)}
+.real-photo-wide{grid-column:span 2}
+.real-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .55s ease}
+.real-photo:hover img{transform:scale(1.025)}
+.real-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 48%,rgba(25,12,12,.80) 100%);pointer-events:none}
+.real-photo figcaption{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;color:#fff;display:flex;flex-direction:column;gap:3px}
+.real-photo figcaption strong{font-family:var(--serif);font-size:25px;line-height:1.05}
+.real-photo figcaption span{font-size:10px;letter-spacing:.04em;color:#eadfd8}
+
+.treasure-photo{background-size:cover;background-position:center 26%}
+.treasure-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,6,7,.04) 28%,rgba(20,8,10,.72) 100%)}
+.treasure-photo .treasure-index{z-index:3;background:rgba(42,16,20,.66);padding:7px 9px;border-radius:999px;backdrop-filter:blur(8px)}
+.treasure-card-photo{padding:0;overflow:hidden}
+.treasure-thumb{height:240px;overflow:hidden;background:#ddd}
+.treasure-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+.treasure-card-photo:hover .treasure-thumb img{transform:scale(1.03)}
+.treasure-card-photo>span,.treasure-card-photo>h3,.treasure-card-photo>p{margin-left:28px;margin-right:28px}
+.treasure-card-photo>span{display:block;margin-top:24px}
+.treasure-card-photo>p{margin-bottom:30px}
+
+.patrimonio-focus{background:#211a17;color:#fff}
+.patrimonio-focus-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:64px;align-items:center}
+.patrimonio-focus figure{margin:0;min-height:620px;border-radius:32px;overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.24)}
+.patrimonio-focus figure img{width:100%;height:100%;object-fit:cover;min-height:620px}
+.patrimonio-focus h2{font-size:clamp(46px,5vw,70px);letter-spacing:-.04em;margin-bottom:20px}
+.patrimonio-focus h2 em{color:var(--gold-light)}
+.patrimonio-focus p{color:#cfc2bc;font-size:15px;line-height:1.8;max-width:680px}
+.patrimonio-focus .btn-outline{border-color:rgba(225,201,159,.7);color:var(--gold-light);background:rgba(255,255,255,.04)}
+
+/* Home: la foto inviata torna protagonista, senza crop aggressivi */
+@media(max-width:680px){
+  .hero{min-height:auto;display:block;padding:58vh 0 52px;background:
+    linear-gradient(to bottom,rgba(247,241,231,.02) 0%,rgba(247,241,231,.04) 35%,rgba(247,241,231,.60) 56%,rgba(247,241,231,.96) 72%,var(--cream) 100%),
+    url("assets/sfondo-san-castrese.jpg") center 6%/112% auto no-repeat,
+    var(--cream)}
+  .hero-copy{max-width:none;padding:24px 18px 20px;background:rgba(255,253,249,.82);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.52);box-shadow:0 22px 55px rgba(54,35,31,.14)}
+  .hero-copy h1{margin-bottom:18px}
+  .hero-copy>p{color:#4c433e}
+  .mobile-cta{grid-template-columns:1.18fr .82fr}
+  .mobile-cta a{font-size:10px;white-space:nowrap}
+  .real-gallery-grid{grid-template-columns:1fr;gap:12px}
+  .real-photo,.real-photo-wide{grid-column:auto;min-height:430px;border-radius:22px}
+  .real-photo figcaption strong{font-size:23px}
+  .treasure-thumb{height:300px}
+  .patrimonio-focus-grid{grid-template-columns:1fr;gap:30px}
+  .patrimonio-focus figure,.patrimonio-focus figure img{min-height:500px}
+  .patrimonio-focus h2{font-size:40px}
+}
+@media(max-width:390px){
+  .hero{padding-top:54vh;background-size:118% auto;background-position:center 4%}
+  .mobile-cta a{font-size:9.5px}
+  .real-photo,.real-photo-wide{min-height:390px}
+  .treasure-thumb{height:270px}
+  .patrimonio-focus figure,.patrimonio-focus figure img{min-height:450px}
+}
