@@ -1,4 +1,4 @@
-// Associazione San Castrese · V2
+// Associazione San Castrese · V4 multipagina
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
