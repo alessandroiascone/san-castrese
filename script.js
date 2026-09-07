@@ -96,3 +96,136 @@ window.addEventListener('orientationchange', () => {
   mainNav?.classList.remove('open');
   document.body.style.overflow = '';
 });
+
+
+// V5.7 · Musica di sottofondo del sito.
+// Nota: i browser moderni possono bloccare l'autoplay con audio finché l'utente non interagisce con la pagina.
+(() => {
+  const AUDIO_SRC = 'assets/musica-san-castrese.mp3';
+  const STORAGE_KEY = 'sanCastreseMusicState';
+  const TARGET_VOLUME = 0.20;
+  const isHome = /(?:\/|\/index\.html)$/.test(window.location.pathname);
+
+  const audio = document.createElement('audio');
+  audio.id = 'site-audio';
+  audio.src = AUDIO_SRC;
+  audio.preload = 'auto';
+  audio.loop = true;
+  audio.playsInline = true;
+  audio.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(audio);
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.id = 'music-toggle';
+  toggle.className = 'music-toggle';
+  toggle.setAttribute('aria-label', 'Attiva musica di sottofondo');
+  toggle.setAttribute('aria-pressed', 'false');
+  toggle.innerHTML = '<span class="music-toggle-icon" aria-hidden="true">♫</span><span class="music-toggle-label">Musica</span>';
+  document.body.appendChild(toggle);
+
+  let state = { playing: false, time: 0, explicitPause: false };
+  try {
+    const raw = sessionStorage.getItem(STORAGE_KEY);
+    if (raw) state = { ...state, ...JSON.parse(raw) };
+  } catch (_) {}
+
+  const saveState = (patch = {}) => {
+    state = { ...state, ...patch };
+    try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) {}
+  };
+
+  const syncToggle = () => {
+    const playing = !audio.paused;
+    toggle.classList.toggle('is-playing', playing);
+    toggle.classList.toggle('needs-gesture', audio.paused && !state.explicitPause && (isHome || state.playing));
+    toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    toggle.setAttribute('aria-label', playing ? 'Disattiva musica di sottofondo' : 'Attiva musica di sottofondo');
+    const label = toggle.querySelector('.music-toggle-label');
+    if (label) label.textContent = playing ? 'Musica on' : 'Musica';
+  };
+
+  const fadeTo = (target, duration = 900) => {
+    const start = audio.volume;
+    const diff = target - start;
+    const started = performance.now();
+    const step = now => {
+      const t = Math.min(1, (now - started) / duration);
+      audio.volume = Math.max(0, Math.min(1, start + diff * t));
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const tryPlay = async ({ fromGesture = false } = {}) => {
+    if (state.explicitPause && !fromGesture) {
+      syncToggle();
+      return false;
+    }
+    try {
+      if (Number.isFinite(state.time) && state.time > 0 && Math.abs((audio.currentTime || 0) - state.time) > 2) {
+        try { audio.currentTime = state.time; } catch (_) {}
+      }
+      audio.volume = 0.01;
+      await audio.play();
+      fadeTo(TARGET_VOLUME, 1200);
+      saveState({ playing: true, explicitPause: false });
+      syncToggle();
+      return true;
+    } catch (_) {
+      audio.volume = TARGET_VOLUME;
+      syncToggle();
+      return false;
+    }
+  };
+
+  const pauseMusic = () => {
+    fadeTo(0, 220);
+    window.setTimeout(() => {
+      audio.pause();
+      audio.volume = TARGET_VOLUME;
+      saveState({ playing: false, explicitPause: true, time: audio.currentTime || 0 });
+      syncToggle();
+    }, 240);
+  };
+
+  toggle.addEventListener('click', async () => {
+    if (audio.paused) {
+      saveState({ explicitPause: false });
+      await tryPlay({ fromGesture: true });
+    } else {
+      pauseMusic();
+    }
+  });
+
+  audio.addEventListener('play', syncToggle);
+  audio.addEventListener('pause', syncToggle);
+  audio.addEventListener('timeupdate', () => {
+    if (Math.floor(audio.currentTime) % 3 === 0) saveState({ time: audio.currentTime, playing: !audio.paused });
+  });
+
+  const persist = () => saveState({ time: audio.currentTime || 0, playing: !audio.paused });
+  window.addEventListener('pagehide', persist);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') persist(); });
+
+  // Home: prova l'avvio immediato. Nelle pagine interne riprende solo se era già in riproduzione.
+  const shouldStart = (isHome && !state.explicitPause) || (state.playing && !state.explicitPause);
+  if (shouldStart) {
+    tryPlay();
+
+    // Fallback previsto dai browser mobile: al primo gesto dell'utente parte, se l'autoplay era stato bloccato.
+    const unlock = async () => {
+      if (audio.paused && !state.explicitPause) await tryPlay({ fromGesture: true });
+      if (!audio.paused) {
+        document.removeEventListener('pointerdown', unlock, true);
+        document.removeEventListener('touchstart', unlock, true);
+        document.removeEventListener('keydown', unlock, true);
+      }
+    };
+    document.addEventListener('pointerdown', unlock, true);
+    document.addEventListener('touchstart', unlock, { capture: true, passive: true });
+    document.addEventListener('keydown', unlock, true);
+  }
+
+  syncToggle();
+})();
