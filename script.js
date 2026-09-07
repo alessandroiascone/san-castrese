@@ -124,6 +124,11 @@ window.addEventListener('orientationchange', () => {
   toggle.innerHTML = '<span class="music-toggle-icon" aria-hidden="true">♫</span><span class="music-toggle-label">Musica</span>';
   document.body.appendChild(toggle);
 
+  const entry = document.getElementById('audio-entry');
+  const entryButton = document.getElementById('audio-entry-button');
+  const ENTRY_KEY = 'sanCastreseEntrySeen';
+
+
   let state = { playing: false, time: 0, explicitPause: false };
   try {
     const raw = sessionStorage.getItem(STORAGE_KEY);
@@ -208,8 +213,26 @@ window.addEventListener('orientationchange', () => {
   window.addEventListener('pagehide', persist);
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') persist(); });
 
-  // Home: prova l'avvio immediato. Nelle pagine interne riprende solo se era già in riproduzione.
-  const shouldStart = (isHome && !state.explicitPause) || (state.playing && !state.explicitPause);
+  // Ingresso audio: sui browser mobile il gesto dell'utente sblocca l'audio in modo affidabile.
+  let entrySeen = false;
+  try { entrySeen = sessionStorage.getItem(ENTRY_KEY) === '1'; } catch (_) {}
+
+  if (isHome && entry && !entrySeen) {
+    document.documentElement.classList.add('audio-entry-open');
+    entryButton?.addEventListener('click', async () => {
+      saveState({ explicitPause: false });
+      await tryPlay({ fromGesture: true });
+      try { sessionStorage.setItem(ENTRY_KEY, '1'); } catch (_) {}
+      entry.classList.add('is-closing');
+      document.documentElement.classList.remove('audio-entry-open');
+      window.setTimeout(() => entry.remove(), 520);
+    }, { once: true });
+  } else if (entry) {
+    entry.remove();
+  }
+
+  // Se l'ingresso è già stato superato, prova l'avvio immediato; nelle pagine interne riprende se era già in riproduzione.
+  const shouldStart = ((isHome && entrySeen) || state.playing) && !state.explicitPause;
   if (shouldStart) {
     tryPlay();
 
