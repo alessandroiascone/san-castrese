@@ -947,3 +947,266 @@ html.audio-entry-open,html.audio-entry-open body{overflow:hidden!important}
   .audio-entry-card h1{font-size:38px}
   .audio-entry-card button{width:100%;max-width:260px}
 }
+
+
+/* =========================
+   V5.9 · Heritage / impronta storica sull'impianto originale
+   ========================= */
+:root{
+  --parchment:#eadcc3;
+  --parchment-light:#f5ecdd;
+  --bronze:#997446;
+  --bronze-dark:#684c2f;
+  --olive-antique:#5c5b45;
+  --ink-antique:#30261f;
+}
+.eyebrow.antique{color:var(--bronze-dark)}
+.eyebrow.antique i{background:var(--bronze)}
+.heritage-window{position:relative;background:linear-gradient(180deg,#efe4d2 0%,#f6efe4 100%);overflow:hidden;border-top:1px solid rgba(104,76,47,.10);border-bottom:1px solid rgba(104,76,47,.12)}
+.heritage-window::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 92% 14%,rgba(92,91,69,.10),transparent 21%),radial-gradient(circle at 8% 80%,rgba(153,116,70,.09),transparent 18%)}
+.heritage-head{position:relative;z-index:1}
+.heritage-home-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.heritage-home-card{min-width:0;text-decoration:none;color:var(--ink);display:grid;grid-template-rows:260px 1fr;background:rgba(255,253,248,.92);border:1px solid rgba(104,76,47,.18);border-radius:24px;overflow:hidden;box-shadow:0 18px 42px rgba(60,44,31,.09),inset 0 1px 0 rgba(255,255,255,.82);transition:.28s ease}
+.heritage-home-card:hover{transform:translateY(-5px);box-shadow:0 27px 54px rgba(60,44,31,.14)}
+.heritage-home-card figure{margin:0;overflow:hidden;background:#d8c8af}
+.heritage-home-card img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.heritage-home-card:hover img{transform:scale(1.025)}
+.heritage-home-card>div{padding:22px 22px 24px}
+.heritage-home-card small{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--bronze-dark);font-weight:700}
+.heritage-home-card strong{display:block;font:600 28px/1 var(--serif);margin:8px 0 9px;color:var(--ink-antique)}
+.heritage-home-card p{margin:0 0 14px;font-size:12.5px;line-height:1.65;color:#665a51}
+.heritage-home-card span{font-size:10px;font-weight:700;color:var(--wine);letter-spacing:.02em}
+
+.signa-section{background:linear-gradient(180deg,#f5ecdd,#eee0cb);border-top:1px solid rgba(104,76,47,.10);border-bottom:1px solid rgba(104,76,47,.13)}
+.signa-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.signum-card{min-width:0;border:1px solid rgba(104,76,47,.17);border-radius:26px;overflow:hidden;background:#fffaf2;box-shadow:0 22px 54px rgba(57,38,28,.10)}
+.signum-card figure{margin:0;aspect-ratio:4/5;overflow:hidden;background:#d8c5a8}
+.signum-card img{width:100%;height:100%;object-fit:cover}
+.signum-card>div{padding:25px}
+.signum-card small{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-dark);font-weight:700}
+.signum-card h3{font:600 32px/1 var(--serif);margin:8px 0 12px;color:var(--ink-antique)}
+.signum-card p{margin:0;color:#66594e;font-size:13px;line-height:1.72}
+.antique-object-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.antique-object{min-width:0;display:grid;grid-template-columns:180px minmax(0,1fr);align-items:stretch;background:rgba(255,250,242,.76);border:1px solid rgba(104,76,47,.14);border-radius:22px;overflow:hidden}
+.antique-object img{width:100%;height:100%;min-height:210px;object-fit:cover}
+.antique-object>div{padding:22px;align-self:center}
+.antique-object small{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-dark);font-weight:700}
+.antique-object strong{display:block;font:600 26px/1 var(--serif);margin:7px 0 9px}
+.antique-object p{font-size:12px;line-height:1.65;color:#66594e;margin:0}
+
+.memoria-scripta{background:linear-gradient(180deg,#f3e9d8,#f8f2e8)}
+.manuscript-feature{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:0;border:1px solid rgba(104,76,47,.18);border-radius:28px;overflow:hidden;background:#fffaf2;box-shadow:0 24px 60px rgba(57,38,28,.11)}
+.manuscript-feature figure{margin:0;min-height:560px;background:#d8c4a6;overflow:hidden}
+.manuscript-feature img{width:100%;height:100%;object-fit:cover}
+.manuscript-copy{padding:42px;align-self:center}
+.manuscript-copy>span{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-dark);font-weight:700}
+.manuscript-copy h3{font:600 38px/.98 var(--serif);margin:10px 0 18px;color:var(--ink-antique)}
+.manuscript-copy p{font-size:13px;line-height:1.78;color:#65594f}
+.manuscript-copy blockquote{margin:24px 0 0;padding:18px 0 0;border-top:1px solid rgba(104,76,47,.20);font:italic 600 21px/1.25 var(--serif);color:var(--wine)}
+.manuscript-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+.manuscript-card{min-width:0;background:#fffaf3;border:1px solid rgba(104,76,47,.15);border-radius:22px;overflow:hidden}
+.manuscript-card img{width:100%;height:280px;object-fit:cover}
+.manuscript-card>div{padding:20px}
+.manuscript-card small{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--bronze-dark);font-weight:700}
+.manuscript-card strong{display:block;font:600 25px/1.02 var(--serif);margin:6px 0 8px}
+.manuscript-card p{margin:0;font-size:12px;line-height:1.6;color:#675b51}
+
+.timeline-card-photo img{display:block;width:100%;max-height:270px;object-fit:cover;border-radius:16px;margin-top:18px;border:1px solid rgba(104,76,47,.14)}
+.timeline-card-photo .timeline-tag{color:var(--bronze-dark)}
+
+/* Tocco cromatico antico, senza stravolgere la palette originale */
+.site-hub{background:linear-gradient(180deg,#f7f1e7 0%,#f2e8d8 100%)}
+.hub-card{border-color:rgba(104,76,47,.13)}
+.home-promo-shell{background:linear-gradient(135deg,#6d2935,#54202a 60%,#3d1d20)}
+.site-footer{background:linear-gradient(180deg,#2a211c,#1d1714)}
+
+@media(max-width:980px){
+  .heritage-home-grid{grid-template-columns:1fr 1fr}.heritage-home-card:last-child{grid-column:1/-1}
+  .antique-object{grid-template-columns:150px minmax(0,1fr)}
+  .manuscript-feature{grid-template-columns:1fr}.manuscript-feature figure{min-height:480px}.manuscript-grid{grid-template-columns:1fr 1fr}.manuscript-card:last-child{grid-column:1/-1}
+}
+@media(max-width:680px){
+  .heritage-window,.signa-section,.memoria-scripta{overflow:hidden}
+  .heritage-home-grid,.signa-grid,.antique-object-grid,.manuscript-grid{grid-template-columns:minmax(0,1fr);width:100%;max-width:100%}
+  .heritage-home-card,.heritage-home-card:last-child{grid-column:auto;width:100%;max-width:100%;grid-template-rows:330px 1fr;border-radius:21px}
+  .heritage-home-card>div{padding:20px}.heritage-home-card strong{font-size:26px}.heritage-home-card p{text-align:justify;text-justify:inter-word}
+  .signum-card{width:100%;max-width:100%;border-radius:21px}.signum-card figure{aspect-ratio:4/5}.signum-card>div{padding:21px}.signum-card h3{font-size:29px}.signum-card p{text-align:justify;text-justify:inter-word}
+  .antique-object{grid-template-columns:120px minmax(0,1fr);width:100%;max-width:100%;border-radius:18px}.antique-object img{min-height:180px}.antique-object>div{padding:17px}.antique-object strong{font-size:23px}
+  .manuscript-feature{display:grid;grid-template-columns:minmax(0,1fr);width:100%;max-width:100%;border-radius:21px}.manuscript-feature figure{min-height:0;aspect-ratio:4/5}.manuscript-copy{padding:22px}.manuscript-copy h3{font-size:31px}.manuscript-copy p{text-align:justify;text-justify:inter-word}
+  .manuscript-card,.manuscript-card:last-child{grid-column:auto;width:100%;max-width:100%;border-radius:18px}.manuscript-card img{height:auto;aspect-ratio:4/3;object-fit:cover}
+  .timeline-card-photo img{max-height:none;aspect-ratio:4/3}
+}
+
+/* V5.9.1 · home mobile compatta: storia sì, scroll infinito no */
+@media(max-width:680px){
+  .heritage-home-grid{gap:10px}
+  .heritage-home-card,.heritage-home-card:last-child{
+    display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto;min-height:168px;
+  }
+  .heritage-home-card figure{height:100%;min-height:168px}
+  .heritage-home-card>div{padding:16px 15px;align-self:center;min-width:0}
+  .heritage-home-card small{font-size:7.5px;letter-spacing:.11em}
+  .heritage-home-card strong{font-size:22px;line-height:.98;margin:6px 0 7px}
+  .heritage-home-card p{font-size:10.5px;line-height:1.48;margin-bottom:9px;text-align:left}
+  .heritage-home-card span{font-size:8.5px}
+}
+@media(max-width:370px){
+  .heritage-home-card,.heritage-home-card:last-child{grid-template-columns:96px minmax(0,1fr)}
+}
+
+
+/* =========================
+   V5.9.1 · ingresso Castrensis antichizzato
+   ========================= */
+.audio-entry{
+  background:
+    radial-gradient(circle at 50% 20%,rgba(218,190,133,.20),transparent 30%),
+    linear-gradient(145deg,rgba(39,26,21,.97),rgba(67,29,35,.97) 52%,rgba(28,21,18,.99));
+  isolation:isolate;
+}
+.audio-entry::before{
+  background:
+    url("assets/pattern-san-castrese.svg") center/390px 390px no-repeat;
+  opacity:.13;
+  mix-blend-mode:screen;
+}
+.audio-entry::after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(210,178,113,.30);
+  border-radius:28px;
+  box-shadow:inset 0 0 0 1px rgba(255,248,228,.035);
+  pointer-events:none;
+}
+.audio-entry-card{
+  max-width:460px;
+  padding:42px 34px 36px;
+  border-radius:8px;
+  background:
+    linear-gradient(rgba(247,237,214,.94),rgba(234,219,187,.94)),
+    repeating-linear-gradient(0deg,rgba(94,68,43,.03) 0 1px,transparent 1px 4px);
+  border:1px solid rgba(129,91,43,.55);
+  box-shadow:
+    0 34px 90px rgba(10,7,6,.40),
+    0 0 0 5px rgba(215,180,110,.07),
+    inset 0 0 0 1px rgba(255,255,255,.55),
+    inset 0 0 42px rgba(126,87,43,.08);
+}
+.audio-entry-card::before,
+.audio-entry-card::after{
+  content:"✦";
+  position:absolute;
+  top:17px;
+  color:#9a6d35;
+  font-size:13px;
+  opacity:.8;
+}
+.audio-entry-card::before{left:18px}.audio-entry-card::after{right:18px}
+.audio-entry-card img{
+  width:118px;height:118px;
+  margin-bottom:19px;
+  filter:drop-shadow(0 14px 16px rgba(63,40,21,.24));
+}
+.audio-entry-card .entry-kicker{
+  color:#6e1b29;
+  font-family:var(--serif);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.19em;
+  margin-bottom:13px;
+}
+.audio-entry-card h1{
+  font-size:clamp(38px,7vw,54px);
+  line-height:.84;
+  letter-spacing:-.025em;
+  color:#2b211b;
+  text-shadow:0 1px 0 rgba(255,255,255,.45);
+}
+.audio-entry-card p{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  flex-wrap:wrap;
+  margin:18px 0 27px;
+  color:#69594a;
+  font-family:var(--serif);
+  letter-spacing:.06em;
+  font-size:14px;
+}
+.audio-entry-card p span::after{
+  content:"·";
+  margin-left:11px;
+  color:#a67a3f;
+}
+.audio-entry-card p b{
+  color:#6f1d2b;
+  font-weight:700;
+}
+.audio-entry-card button{
+  position:relative;
+  min-width:220px;
+  padding:13px 30px 12px;
+  border:1px solid #8c632f;
+  border-radius:4px;
+  background:
+    linear-gradient(180deg,#d7b875 0%,#ba8c45 18%,#8c5f2f 52%,#6e431f 100%);
+  color:#fff9e9;
+  box-shadow:
+    0 10px 22px rgba(69,39,19,.30),
+    inset 0 1px 0 rgba(255,248,220,.55),
+    inset 0 -2px 0 rgba(57,31,15,.35),
+    0 0 0 3px rgba(255,249,229,.30),
+    0 0 0 4px rgba(126,84,34,.45);
+  text-shadow:0 1px 2px rgba(48,25,12,.55);
+}
+.audio-entry-card button::before,
+.audio-entry-card button::after{
+  content:"✦";
+  position:absolute;
+  top:50%;transform:translateY(-52%);
+  font-size:9px;
+  color:#f6e2ad;
+  opacity:.9;
+}
+.audio-entry-card button::before{left:18px}.audio-entry-card button::after{right:18px}
+.audio-entry-card button span{
+  display:block;
+  font-family:var(--serif);
+  font-size:20px;
+  line-height:1;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.audio-entry-card button small{
+  display:block;
+  margin-top:5px;
+  color:#f7e6bc;
+  font-family:var(--serif);
+  font-size:10px;
+  font-style:italic;
+  letter-spacing:.12em;
+  text-transform:none;
+}
+.audio-entry-card button:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.05);
+  box-shadow:
+    0 14px 28px rgba(69,39,19,.34),
+    inset 0 1px 0 rgba(255,248,220,.62),
+    inset 0 -2px 0 rgba(57,31,15,.35),
+    0 0 0 3px rgba(255,249,229,.32),
+    0 0 0 4px rgba(126,84,34,.52);
+}
+.audio-entry-card button:active{transform:translateY(0)}
+@media(max-width:680px){
+  .audio-entry{padding:17px}
+  .audio-entry::after{inset:9px;border-radius:22px}
+  .audio-entry-card{padding:34px 18px 30px;max-width:360px}
+  .audio-entry-card img{width:102px;height:102px}
+  .audio-entry-card h1{font-size:41px}
+  .audio-entry-card p{font-size:12px;gap:8px;margin:15px 0 24px}
+  .audio-entry-card p span::after{margin-left:8px}
+  .audio-entry-card button{width:min(250px,88%);min-width:0}
+}

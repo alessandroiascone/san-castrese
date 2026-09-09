@@ -28,16 +28,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5.7.1" />
+  <link rel="stylesheet" href="styles.css?v=5.9.1" />
 </head>
 <body>
   <div class="audio-entry" id="audio-entry" role="dialog" aria-modal="true" aria-label="Ingresso al sito">
     <div class="audio-entry-card">
       <img src="assets/logo-san-castrese-3d.png?v=5.7.1.1" alt="Associazione San Castrese" />
-      <small>Castrensis · Marano di Napoli</small>
-      <h1>Associazione San Castrese</h1>
-      <p>Memoria · Culto · Tradizione</p>
-      <button type="button" id="audio-entry-button">Entra nel sito</button>
+      <small class="entry-kicker">Memoria · Cultus · Traditio</small>
+      <h1>Associazione<br>San Castrese</h1>
+      <p><span>Marano di Napoli</span><b>Anno Domini MCMIX</b></p>
+      <button type="button" id="audio-entry-button"><span>Entra</span><small>Ingredere</small></button>
     </div>
   </div>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -62,11 +62,35 @@
     <section class="hero home-hero" aria-labelledby="hero-title">
       <div class="hero-grid container">
         <div class="hero-copy reveal">
-          <span class="eyebrow"><i></i>Castrensis · Marano di Napoli</span>
+          <span class="eyebrow"><i></i>Memoria Castrensis · Anno MCMIX</span>
           <h1 id="hero-title">Associazione San Castrese.<br><em>Memoria, culto e tradizione a Marano.</em></h1>
-          <p>Dal 1909 l'Associazione custodisce e tramanda il legame tra Marano di Napoli e il suo Santo Patrono, valorizzandone storia, patrimonio e tradizioni.</p>
+          <p>Dal 1909 l'Associazione custodisce e tramanda il legame tra Marano di Napoli e il suo Santo Patrono. Bandiere, registri, insegne e memorie conservate nella sede raccontano oltre un secolo di vita associativa.</p>
           <div class="hero-actions"><a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Casalanno%201%2C%2080016%20Marano%20di%20Napoli%20NA" rel="noopener" target="_blank">Portami in Associazione <span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="partecipa.html">Diventa socio</a></div>
           <div class="hero-facts"><div><strong>Dal 1909</strong><span>Una storia associativa</span></div><div><strong>Via Casalanno 1</strong><span>La nostra sede</span></div><div><strong>2026</strong><span>Iscrizioni aperte</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="heritage-window section" aria-labelledby="heritage-home-title">
+      <div class="container">
+        <div class="compact-head reveal heritage-head">
+          <span class="eyebrow antique"><i></i>Memoria scripta · Signa Castrensia</span>
+          <h2 id="heritage-home-title">La storia non è soltanto raccontata.<br><em>È ancora qui, custodita.</em></h2>
+          <p>Tra gli ambienti di Via Casalanno 1 sono conservate testimonianze autentiche della vita associativa: dalla bandiera del 1909 ai registri manoscritti, fino alle insegne della storia contemporanea.</p>
+        </div>
+        <div class="heritage-home-grid">
+          <a class="heritage-home-card reveal" href="patrimonio.html#signa-castrensia">
+            <figure><img src="assets/history/bandiera-1909.jpg" alt="Bandiera storica originale dell'Associazione San Castrese, 1909" loading="lazy"></figure>
+            <div><small>Anno MCMIX · 1909</small><strong>La bandiera originale</strong><p>Una delle testimonianze più antiche dell'identità associativa.</p><span>Scopri il patrimonio →</span></div>
+          </a>
+          <a class="heritage-home-card reveal reveal-delay" href="archivio.html#memoria-scripta">
+            <figure><img src="assets/history/verbale-26-dicembre-1944.jpg" alt="Registro manoscritto con verbale del 26 dicembre 1944" loading="lazy"></figure>
+            <div><small>Memoria scripta · 26.XII.1944</small><strong>Il verbale del 1944</strong><p>Una pagina manoscritta documenta la riunione del Consiglio Direttivo del 26 dicembre 1944.</p><span>Entra nell'archivio →</span></div>
+          </a>
+          <a class="heritage-home-card reveal" href="patrimonio.html#signa-castrensia">
+            <figure><img src="assets/history/bandiera-2015.jpg" alt="Bandiera dell'Associazione benedetta da Papa Francesco a Napoli il 21 marzo 2015" loading="lazy"></figure>
+            <div><small>Signum · 21.III.2015</small><strong>La bandiera benedetta</strong><p>Benedetta da Papa Francesco in Piazza del Plebiscito il 21 marzo 2015.</p><span>Leggi la storia →</span></div>
+          </a>
         </div>
       </div>
     </section>
@@ -111,5 +135,5 @@
     <div class="lightbox-image" id="lightbox-image"></div>
     <div class="lightbox-caption"><small id="lightbox-year"></small><strong id="lightbox-title"></strong><span>Archivio fotografico</span></div>
   </dialog>
-  <script src="script.js?v=5.7.1"></script>
+  <script src="script.js?v=5.9.1"></script>
 </body></html>
