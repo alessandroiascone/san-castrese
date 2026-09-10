@@ -1,0 +1,43 @@
+{
+  "id": "./",
+  "name": "Associazione San Castrese – Marano di Napoli",
+  "short_name": "San Castrese",
+  "description": "Dal 1909: memoria, culto, patrimonio storico e vita associativa dell’Associazione San Castrese di Marano di Napoli.",
+  "lang": "it-IT",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait-primary",
+  "background_color": "#efe4cc",
+  "theme_color": "#6f1d2b",
+  "categories": [
+    "education",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/app-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

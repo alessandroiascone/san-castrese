@@ -252,3 +252,92 @@ window.addEventListener('orientationchange', () => {
 
   syncToggle();
 })();
+
+
+/* =========================
+   V5.9.5 · PWA installabile
+   ========================= */
+(() => {
+  const isStandalone =
+    window.matchMedia?.('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true;
+
+  if (isStandalone) {
+    document.documentElement.classList.add('is-installed-app');
+  }
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js?v=5.9.5').catch(() => {});
+    });
+  }
+
+  if (isStandalone) return;
+
+  const installButton = document.createElement('button');
+  installButton.type = 'button';
+  installButton.className = 'install-app-button';
+  installButton.setAttribute('aria-label', "Installa l'app San Castrese");
+  installButton.innerHTML =
+    '<span class="install-app-icon" aria-hidden="true">↓</span>' +
+    '<span class="install-app-label">Installa l’app</span>';
+  document.body.appendChild(installButton);
+
+  let deferredPrompt = null;
+  const ua = navigator.userAgent || '';
+  const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+
+  const showButton = () => installButton.classList.add('is-visible');
+  const hideButton = () => installButton.classList.remove('is-visible');
+
+  window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    deferredPrompt = event;
+    showButton();
+  });
+
+  window.addEventListener('appinstalled', () => {
+    deferredPrompt = null;
+    hideButton();
+  });
+
+  if (isIOS) {
+    window.setTimeout(showButton, 900);
+  }
+
+  const openIOSHelp = () => {
+    let dialog = document.getElementById('ios-install-help');
+    if (!dialog) {
+      dialog = document.createElement('dialog');
+      dialog.id = 'ios-install-help';
+      dialog.className = 'install-help';
+      dialog.innerHTML = `
+        <div class="install-help-card">
+          <button class="install-help-close" type="button" aria-label="Chiudi">×</button>
+          <small>San Castrese · App</small>
+          <h2>Installa sulla schermata Home</h2>
+          <p>Su iPhone/iPad apri il menu <strong>Condividi</strong> di Safari e scegli <strong>Aggiungi alla schermata Home</strong>.</p>
+          <button class="install-help-ok" type="button">Ho capito</button>
+        </div>`;
+      document.body.appendChild(dialog);
+      const close = () => dialog.close();
+      dialog.querySelector('.install-help-close')?.addEventListener('click', close);
+      dialog.querySelector('.install-help-ok')?.addEventListener('click', close);
+      dialog.addEventListener('click', e => { if (e.target === dialog) close(); });
+    }
+    dialog.showModal();
+  };
+
+  installButton.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      try {
+        const choice = await deferredPrompt.userChoice;
+        if (choice?.outcome === 'accepted') hideButton();
+      } catch (_) {}
+      deferredPrompt = null;
+    } else if (isIOS) {
+      openIOSHelp();
+    }
+  });
+})();
