@@ -1,4 +1,4 @@
-const VERSION = 'san-castrese-v5.9.5';
+const VERSION = 'san-castrese-v5.9.7';
 const CORE = `${VERSION}-core`;
 const RUNTIME = `${VERSION}-runtime`;
 
@@ -16,7 +16,7 @@ const CORE_FILES = [
   './urna-2025.html',
   './offline.html',
   './styles.css',
-  './script.js',
+  './script-597.js',
   './manifest.webmanifest',
   './assets/logo-san-castrese-3d.png',
   './assets/app-icon-192.png',

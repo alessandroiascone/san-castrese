@@ -98,13 +98,13 @@ window.addEventListener('orientationchange', () => {
 });
 
 
-// V5.7 · Musica di sottofondo del sito.
-// Nota: i browser moderni possono bloccare l'autoplay con audio finché l'utente non interagisce con la pagina.
+// V5.9.7 · Audio robusto + ingresso sugli accessi esterni.
 (() => {
-  const AUDIO_SRC = 'assets/musica-san-castrese.mp3';
+  const AUDIO_SRC = '/assets/musica-san-castrese.mp3?v=597';
   const STORAGE_KEY = 'sanCastreseMusicState';
   const TARGET_VOLUME = 0.20;
-  const isHome = /(?:\/|\/index\.html)$/.test(window.location.pathname);
+  const path = window.location.pathname || '/';
+  const isHome = path === '/' || path.endsWith('/index.html');
 
   const audio = document.createElement('audio');
   audio.id = 'site-audio';
@@ -112,30 +112,30 @@ window.addEventListener('orientationchange', () => {
   audio.preload = 'auto';
   audio.loop = true;
   audio.playsInline = true;
-  audio.setAttribute('aria-hidden', 'true');
+  audio.setAttribute('playsinline','');
+  audio.setAttribute('webkit-playsinline','');
+  audio.setAttribute('aria-hidden','true');
   document.body.appendChild(audio);
 
   const toggle = document.createElement('button');
   toggle.type = 'button';
   toggle.id = 'music-toggle';
   toggle.className = 'music-toggle';
-  toggle.setAttribute('aria-label', 'Attiva musica di sottofondo');
-  toggle.setAttribute('aria-pressed', 'false');
+  toggle.setAttribute('aria-label','Attiva musica di sottofondo');
+  toggle.setAttribute('aria-pressed','false');
   toggle.innerHTML = '<span class="music-toggle-icon" aria-hidden="true">♫</span><span class="music-toggle-label">Musica</span>';
   document.body.appendChild(toggle);
 
   const entry = document.getElementById('audio-entry');
   const entryButton = document.getElementById('audio-entry-button');
-  const ENTRY_KEY = 'sanCastreseEntrySeen';
 
-
-  let state = { playing: false, time: 0, explicitPause: false };
+  let state = { playing:false, time:0, explicitPause:false };
   try {
     const raw = sessionStorage.getItem(STORAGE_KEY);
     if (raw) state = { ...state, ...JSON.parse(raw) };
   } catch (_) {}
 
-  const saveState = (patch = {}) => {
+  const saveState = (patch={}) => {
     state = { ...state, ...patch };
     try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) {}
   };
@@ -143,38 +143,35 @@ window.addEventListener('orientationchange', () => {
   const syncToggle = () => {
     const playing = !audio.paused;
     toggle.classList.toggle('is-playing', playing);
-    toggle.classList.toggle('needs-gesture', audio.paused && !state.explicitPause && (isHome || state.playing));
+    toggle.classList.toggle('needs-gesture', audio.paused && !state.explicitPause);
     toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
     toggle.setAttribute('aria-label', playing ? 'Disattiva musica di sottofondo' : 'Attiva musica di sottofondo');
     const label = toggle.querySelector('.music-toggle-label');
     if (label) label.textContent = playing ? 'Musica on' : 'Musica';
   };
 
-  const fadeTo = (target, duration = 900) => {
-    const start = audio.volume;
-    const diff = target - start;
+  const fadeTo = (target, duration=900) => {
+    const from = Number.isFinite(audio.volume) ? audio.volume : 0;
     const started = performance.now();
     const step = now => {
-      const t = Math.min(1, (now - started) / duration);
-      audio.volume = Math.max(0, Math.min(1, start + diff * t));
+      const t = Math.min(1,(now-started)/duration);
+      audio.volume = Math.max(0,Math.min(1,from + (target-from)*t));
       if (t < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
   };
 
-  const tryPlay = async ({ fromGesture = false } = {}) => {
-    if (state.explicitPause && !fromGesture) {
-      syncToggle();
-      return false;
-    }
+  const startAudio = async ({gesture=false}={}) => {
+    if (state.explicitPause && !gesture) return false;
     try {
-      if (Number.isFinite(state.time) && state.time > 0 && Math.abs((audio.currentTime || 0) - state.time) > 2) {
+      audio.volume = 0.01;
+      const p = audio.play();
+      if (p && typeof p.then === 'function') await p;
+      if (Number.isFinite(state.time) && state.time > 0 && Number.isFinite(audio.duration) && state.time < audio.duration - 2) {
         try { audio.currentTime = state.time; } catch (_) {}
       }
-      audio.volume = 0.01;
-      await audio.play();
-      fadeTo(TARGET_VOLUME, 1200);
-      saveState({ playing: true, explicitPause: false });
+      fadeTo(TARGET_VOLUME,1000);
+      saveState({playing:true,explicitPause:false});
       syncToggle();
       return true;
     } catch (_) {
@@ -184,70 +181,90 @@ window.addEventListener('orientationchange', () => {
     }
   };
 
-  const pauseMusic = () => {
-    fadeTo(0, 220);
-    window.setTimeout(() => {
+  const pauseAudio = () => {
+    fadeTo(0,180);
+    setTimeout(() => {
       audio.pause();
       audio.volume = TARGET_VOLUME;
-      saveState({ playing: false, explicitPause: true, time: audio.currentTime || 0 });
+      saveState({playing:false,explicitPause:true,time:audio.currentTime || 0});
       syncToggle();
-    }, 240);
+    },210);
   };
 
   toggle.addEventListener('click', async () => {
     if (audio.paused) {
-      saveState({ explicitPause: false });
-      await tryPlay({ fromGesture: true });
+      saveState({explicitPause:false});
+      await startAudio({gesture:true});
     } else {
-      pauseMusic();
+      pauseAudio();
     }
   });
 
-  audio.addEventListener('play', syncToggle);
-  audio.addEventListener('pause', syncToggle);
-  audio.addEventListener('timeupdate', () => {
-    if (Math.floor(audio.currentTime) % 3 === 0) saveState({ time: audio.currentTime, playing: !audio.paused });
+  audio.addEventListener('play',syncToggle);
+  audio.addEventListener('pause',syncToggle);
+  audio.addEventListener('error',syncToggle);
+  audio.addEventListener('timeupdate',() => {
+    const sec = Math.floor(audio.currentTime || 0);
+    if (sec % 4 === 0) saveState({time:audio.currentTime || 0,playing:!audio.paused});
   });
 
-  const persist = () => saveState({ time: audio.currentTime || 0, playing: !audio.paused });
-  window.addEventListener('pagehide', persist);
-  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') persist(); });
+  const persist = () => saveState({time:audio.currentTime || 0,playing:!audio.paused});
+  window.addEventListener('pagehide',persist);
+  document.addEventListener('visibilitychange',() => {
+    if (document.visibilityState === 'hidden') persist();
+  });
 
-  // Ingresso audio: sui browser mobile il gesto dell'utente sblocca l'audio in modo affidabile.
-  let entrySeen = false;
-  try { entrySeen = sessionStorage.getItem(ENTRY_KEY) === '1'; } catch (_) {}
+  let sameOriginReferrer = false;
+  try {
+    sameOriginReferrer = !!document.referrer && new URL(document.referrer).origin === location.origin;
+  } catch (_) {}
 
-  if (isHome && entry && !entrySeen) {
+  let navType = '';
+  try { navType = performance.getEntriesByType('navigation')[0]?.type || ''; } catch (_) {}
+
+  // Accesso diretto, WhatsApp/social, nuova scheda o refresh:
+  // mostra sempre l'ingresso per ottenere un gesto utente valido e far partire la musica.
+  const showEntry = isHome && entry && (!sameOriginReferrer || navType === 'reload');
+
+  if (showEntry) {
     document.documentElement.classList.add('audio-entry-open');
     entryButton?.addEventListener('click', async () => {
-      saveState({ explicitPause: false });
-      await tryPlay({ fromGesture: true });
-      try { sessionStorage.setItem(ENTRY_KEY, '1'); } catch (_) {}
-      entry.classList.add('is-closing');
-      document.documentElement.classList.remove('audio-entry-open');
-      window.setTimeout(() => entry.remove(), 520);
-    }, { once: true });
-  } else if (entry) {
-    entry.remove();
-  }
+      entryButton.disabled = true;
+      const main = entryButton.querySelector('span');
+      const sub = entryButton.querySelector('small');
+      if (main) main.textContent = 'Apertura…';
+      if (sub) sub.textContent = 'Sonus';
 
-  // Se l'ingresso è già stato superato, prova l'avvio immediato; nelle pagine interne riprende se era già in riproduzione.
-  const shouldStart = ((isHome && entrySeen) || state.playing) && !state.explicitPause;
-  if (shouldStart) {
-    tryPlay();
+      saveState({explicitPause:false});
+      const ok = await startAudio({gesture:true});
 
-    // Fallback previsto dai browser mobile: al primo gesto dell'utente parte, se l'autoplay era stato bloccato.
-    const unlock = async () => {
-      if (audio.paused && !state.explicitPause) await tryPlay({ fromGesture: true });
-      if (!audio.paused) {
-        document.removeEventListener('pointerdown', unlock, true);
-        document.removeEventListener('touchstart', unlock, true);
-        document.removeEventListener('keydown', unlock, true);
+      if (ok) {
+        entry.classList.add('is-closing');
+        document.documentElement.classList.remove('audio-entry-open');
+        setTimeout(() => entry.remove(),520);
+      } else {
+        entryButton.disabled = false;
+        if (main) main.textContent = 'Riprova';
+        if (sub) sub.textContent = 'Ingredere';
       }
-    };
-    document.addEventListener('pointerdown', unlock, true);
-    document.addEventListener('touchstart', unlock, { capture: true, passive: true });
-    document.addEventListener('keydown', unlock, true);
+    });
+  } else {
+    if (entry) entry.remove();
+
+    if (state.playing && !state.explicitPause) {
+      startAudio();
+      const unlock = async () => {
+        if (audio.paused && !state.explicitPause) await startAudio({gesture:true});
+        if (!audio.paused) {
+          document.removeEventListener('pointerdown',unlock,true);
+          document.removeEventListener('touchstart',unlock,true);
+          document.removeEventListener('keydown',unlock,true);
+        }
+      };
+      document.addEventListener('pointerdown',unlock,true);
+      document.addEventListener('touchstart',unlock,{capture:true,passive:true});
+      document.addEventListener('keydown',unlock,true);
+    }
   }
 
   syncToggle();
@@ -255,7 +272,7 @@ window.addEventListener('orientationchange', () => {
 
 
 /* =========================
-   V5.9.8 · installazione PWA riposizionata
+   V5.9.7 · PWA installabile
    ========================= */
 (() => {
   const isStandalone =
@@ -268,65 +285,41 @@ window.addEventListener('orientationchange', () => {
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js?v=5.9.8').catch(() => {});
+      navigator.serviceWorker.register('./service-worker.js?v=5.9.7').catch(() => {});
     });
   }
 
   if (isStandalone) return;
 
+  const installButton = document.createElement('button');
+  installButton.type = 'button';
+  installButton.className = 'install-app-button';
+  installButton.setAttribute('aria-label', "Installa l'app San Castrese");
+  installButton.innerHTML =
+    '<span class="install-app-icon" aria-hidden="true">↓</span>' +
+    '<span class="install-app-label">Installa l’app</span>';
+  document.body.appendChild(installButton);
+
   let deferredPrompt = null;
   const ua = navigator.userAgent || '';
   const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
 
-  const createInstallButton = (kind = 'inline') => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = kind === 'nav' ? 'install-app-nav' : 'install-app-button';
-    button.setAttribute('aria-label', "Installa l'app San Castrese");
-    button.innerHTML = kind === 'nav'
-      ? '<span aria-hidden="true">⇩</span>Installa l’app'
-      : '<span class="install-app-icon" aria-hidden="true">↓</span>' +
-        '<span class="install-app-copy"><span class="install-app-label">Installa l’app</span><small>Aggiungi San Castrese alla schermata Home</small></span>' ;
-    return button;
-  };
-
-  const heroActions = document.querySelector('.hero-actions');
-  let installButton = null;
-
-  if (heroActions) {
-    const inlineWrap = document.createElement('div');
-    inlineWrap.className = 'install-app-inline';
-    installButton = createInstallButton('inline');
-    inlineWrap.appendChild(installButton);
-    heroActions.insertAdjacentElement('afterend', inlineWrap);
-  }
-
-  const mainNav = document.querySelector('.main-nav');
-  const navInstallButton = createInstallButton('nav');
-  if (mainNav) {
-    mainNav.appendChild(navInstallButton);
-  }
-
-  const buttons = [installButton, navInstallButton].filter(Boolean);
-  if (!buttons.length) return;
-
-  const showButtons = () => buttons.forEach(btn => btn.classList.add('is-visible'));
-  const hideButtons = () => buttons.forEach(btn => btn.classList.remove('is-visible'));
+  const showButton = () => installButton.classList.add('is-visible');
+  const hideButton = () => installButton.classList.remove('is-visible');
 
   window.addEventListener('beforeinstallprompt', event => {
     event.preventDefault();
     deferredPrompt = event;
-    showButtons();
+    showButton();
   });
 
   window.addEventListener('appinstalled', () => {
     deferredPrompt = null;
-    hideButtons();
-    document.documentElement.classList.add('is-installed-app');
+    hideButton();
   });
 
   if (isIOS) {
-    window.setTimeout(showButtons, 900);
+    window.setTimeout(showButton, 900);
   }
 
   const openIOSHelp = () => {
@@ -352,18 +345,16 @@ window.addEventListener('orientationchange', () => {
     dialog.showModal();
   };
 
-  const handleInstall = async () => {
+  installButton.addEventListener('click', async () => {
     if (deferredPrompt) {
       deferredPrompt.prompt();
       try {
         const choice = await deferredPrompt.userChoice;
-        if (choice?.outcome === 'accepted') hideButtons();
+        if (choice?.outcome === 'accepted') hideButton();
       } catch (_) {}
       deferredPrompt = null;
     } else if (isIOS) {
       openIOSHelp();
     }
-  };
-
-  buttons.forEach(btn => btn.addEventListener('click', handleInstall));
+  });
 })();

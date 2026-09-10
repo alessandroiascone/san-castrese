@@ -1213,42 +1213,73 @@ html.audio-entry-open,html.audio-entry-open body{overflow:hidden!important}
 
 
 /* =========================
-   V5.9.5 · installazione PWA
+   V5.9.8 · installazione PWA
    ========================= */
-.install-app-button{
-  position:fixed;
-  left:20px;
-  bottom:22px;
-  z-index:1200;
+.install-app-inline{
   display:none;
+  margin-top:16px;
+  align-items:flex-start;
+}
+.install-app-button,
+.install-app-nav{
+  display:none;
+}
+.install-app-button.is-visible,
+.install-app-nav.is-visible,
+.install-app-inline .install-app-button.is-visible{
+  display:inline-flex;
+}
+.install-app-button{
   align-items:center;
-  gap:9px;
-  min-height:46px;
-  padding:8px 14px 8px 9px;
-  border:1px solid rgba(158,111,54,.62);
-  border-radius:999px;
-  background:linear-gradient(180deg,rgba(247,237,215,.97),rgba(226,206,169,.97));
+  gap:12px;
+  padding:10px 14px 10px 10px;
+  min-height:56px;
+  border:1px solid rgba(158,111,54,.58);
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(247,237,215,.98),rgba(233,218,190,.98));
   color:#52202a;
-  box-shadow:0 15px 34px rgba(53,35,24,.22),inset 0 1px 0 rgba(255,255,255,.72);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  font:700 11px/1 var(--sans);
-  letter-spacing:.02em;
+  box-shadow:0 14px 30px rgba(53,35,24,.14), inset 0 1px 0 rgba(255,255,255,.72);
+  font:700 14px/1 var(--sans);
+  letter-spacing:.01em;
   cursor:pointer;
+  text-align:left;
   transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;
 }
-.install-app-button.is-visible{display:inline-flex}
-.install-app-button:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(53,35,24,.27),inset 0 1px 0 rgba(255,255,255,.76)}
+.install-app-button:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(53,35,24,.19), inset 0 1px 0 rgba(255,255,255,.76)}
 .install-app-button:active{transform:translateY(0)}
 .install-app-icon{
-  width:30px;height:30px;display:grid;place-items:center;border-radius:50%;
+  width:34px;height:34px;display:grid;place-items:center;flex:0 0 34px;border-radius:50%;
   background:linear-gradient(180deg,#7c2635,#541724);
   color:#f6e2ad;
   border:1px solid rgba(201,164,99,.58);
   font:700 18px/1 Georgia,serif;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 5px 13px rgba(71,38,29,.15);
 }
-.is-installed-app .install-app-button{display:none!important}
+.install-app-copy{display:flex;flex-direction:column;gap:4px}
+.install-app-label{display:block}
+.install-app-copy small{
+  color:#7a6451;
+  font:500 11px/1.35 var(--sans);
+  letter-spacing:.01em;
+}
+.install-app-nav{
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-top:8px;
+  padding:12px 16px;
+  border-radius:14px;
+  border:1px solid rgba(158,111,54,.48);
+  background:linear-gradient(180deg,rgba(247,237,215,.98),rgba(233,218,190,.98));
+  color:#5b1d2b;
+  font:700 13px/1 var(--sans);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.72);
+  cursor:pointer;
+}
+.install-app-nav span{font-size:15px;line-height:1}
+.is-installed-app .install-app-button,
+.is-installed-app .install-app-nav,
+.is-installed-app .install-app-inline{display:none!important}
 
 .install-help{
   border:0;
@@ -1283,16 +1314,20 @@ html.audio-entry-open,html.audio-entry-open body{overflow:hidden!important}
   border:1px solid #8c632f;border-radius:4px;padding:12px 22px;
   background:#6f1d2b;color:#fff8ed;font:700 12px/1 var(--sans);letter-spacing:.04em;cursor:pointer
 }
+@media(max-width:980px){
+  .install-app-nav.is-visible{display:flex}
+}
 @media(max-width:680px){
-  .install-app-button{
-    left:15px;
-    bottom:100px;
-    width:46px;height:46px;min-height:46px;
-    padding:7px;justify-content:center;border-radius:50%
+  .install-app-inline{
+    display:flex;
+    width:100%;
+    margin-top:14px;
   }
-  .install-app-label{
-    position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
-    clip:rect(0,0,0,0);white-space:nowrap;border:0
+  .install-app-button,
+  .install-app-inline .install-app-button.is-visible{
+    width:100%;
   }
-  .install-app-icon{width:30px;height:30px;flex:0 0 30px}
+  .install-app-button{padding:12px 14px 12px 10px;min-height:58px;border-radius:16px}
+  .install-app-copy small{font-size:11px}
+  .install-app-nav{width:100%;margin-top:10px}
 }
