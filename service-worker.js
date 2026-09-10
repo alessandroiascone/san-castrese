@@ -1,4 +1,4 @@
-const VERSION = 'san-castrese-v5.9.7';
+const VERSION = 'san-castrese-v5.9.9-logo';
 const CORE = `${VERSION}-core`;
 const RUNTIME = `${VERSION}-runtime`;
 

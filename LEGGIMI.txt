@@ -1,0 +1,7 @@
+PATCH V5.9.9 - FORZA NUOVO LOGO
+
+Sostituisci nella ROOT del repository questi file con quelli della patch.
+NON modificare la cartella assets: i nuovi logo/icon risultano già caricati online.
+Questa patch cambia le versioni cache e il Service Worker, così browser e PWA smettono di usare il vecchio logo memorizzato.
+
+Dopo il commit, attendi GitHub Pages 1-2 minuti e riapri il sito.

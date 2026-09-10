@@ -285,7 +285,7 @@ window.addEventListener('orientationchange', () => {
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js?v=5.9.7').catch(() => {});
+      navigator.serviceWorker.register('./service-worker.js?v=5.9.9').catch(() => {});
     });
   }
 
