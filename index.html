@@ -38,16 +38,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5.9.6" />
+  <link rel="stylesheet" href="styles-602.css?v=6.0.2" />
 </head>
 <body>
   <div class="audio-entry" id="audio-entry" role="dialog" aria-modal="true" aria-label="Ingresso al sito">
-    <div class="audio-entry-card">
-      <img src="assets/logo-san-castrese-3d.png?v=5.9.9" alt="Associazione San Castrese" />
-      <small class="entry-kicker">Memoria · Cultus · Traditio</small>
-      <h1>Associazione<br>San Castrese</h1>
-      <p><span>Marano di Napoli</span><b>Anno Domini MCMIX</b></p>
-      <button type="button" id="audio-entry-button"><span>Entra</span><small>Ingredere</small></button>
+    <div class="entry-scroll" aria-labelledby="entry-title">
+      <img class="entry-reference" src="assets/ingresso-pergamena.png" alt="" aria-hidden="true" fetchpriority="high" width="941" height="1565">
+      <div class="sr-only"><p>Memoria · Cultus · Traditio</p><h1 id="entry-title">Associazione San Castrese</h1><p>Marano di Napoli · Anno Domini MCMIX</p></div>
+      <button type="button" class="entry-action entry-enter" id="audio-entry-button"><span>Entra</span><small>Ingredere</small></button>
+      <button type="button" class="entry-action entry-install" id="entry-install-button"><span>Installa l’app</span><small>Aggiungi alla schermata Home</small></button>
     </div>
   </div>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -83,11 +82,8 @@
 
     <section class="heritage-window section" aria-labelledby="heritage-home-title">
       <div class="container">
-        <div class="compact-head reveal heritage-head">
-          <span class="eyebrow antique"><i></i>Memoria scripta · Signa Castrensia</span>
-          <h2 id="heritage-home-title">La storia non è soltanto raccontata.<br><em>È ancora qui, custodita.</em></h2>
-          <p>Tra gli ambienti di Via Casalanno 1 sono conservate testimonianze autentiche della vita associativa: dalla bandiera del 1909 ai registri manoscritti, fino alle insegne della storia contemporanea.</p>
-        </div>
+        <section class="memory-banner" aria-label="Tradizione Castrensis"><div class="memory-scroll"><div class="memory-inscription"><span>Tradizione Castrensis</span><h2 id="heritage-home-title">Custodire la memoria significa <em>renderla viva nel tempo.</em></h2></div></div></section>
+        <p class="heritage-home-description">Tra gli ambienti di Via Casalanno 1 sono conservate testimonianze autentiche della vita associativa: dalla bandiera del 1909 ai registri manoscritti, fino alle insegne della storia contemporanea.</p>
         <div class="heritage-home-grid">
           <a class="heritage-home-card reveal" href="patrimonio.html#signa-castrensia">
             <figure><img src="assets/history/bandiera-1909.jpg" alt="Bandiera storica originale dell'Associazione San Castrese, 1909" loading="lazy"></figure>
@@ -117,9 +113,8 @@
         </div>
       </div>
     </section>
-    <section class="home-promo">
-      <div class="container home-promo-shell reveal"><div><span class="eyebrow light"><i></i>Tradizione Castrensis</span><h2>Custodire la memoria significa <em>renderla viva nel tempo.</em></h2></div><a class="btn btn-gold" href="partecipa.html">Scopri come partecipare →</a></div>
-    </section>
+<section class="uniform-preview section"><div class="container"><div class="compact-head"><span class="eyebrow">Le divise dell’Associazione</span><h2>Due vesti.<br><em>Una stessa appartenenza.</em></h2></div><div class="uniform-preview-grid"><a href="patrimonio.html#divisa-rossa"><img src="assets/divisa-rossa.jpg" alt="Divisa rossa con ricami oro" loading="lazy" width="1024" height="1536"><div><h3>La divisa rossa</h3><p>Per le solennità del martirio di San Castrese.</p><span>Scopri la divisa →</span></div></a><a href="patrimonio.html#divisa-bianca"><img src="assets/divisa-bianca.jpg" alt="Divisa bianca con colletto rosso e ricami oro" loading="lazy" width="1024" height="1536"><div><h3>La divisa bianca</h3><p>Per il tempo ordinario e la vita associativa.</p><span>Scopri la divisa →</span></div></a></div></div></section>
+
   </main>
   <nav class="mobile-cta" aria-label="Azioni rapide">
     <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Casalanno%201%2C%2080016%20Marano%20di%20Napoli%20NA" rel="noopener" target="_blank"><span>⌖</span>Portami in Associazione</a>
@@ -145,5 +140,5 @@
     <div class="lightbox-image" id="lightbox-image"></div>
     <div class="lightbox-caption"><small id="lightbox-year"></small><strong id="lightbox-title"></strong><span>Archivio fotografico</span></div>
   </dialog>
-  <script src="script-597.js?v=5.9.9"></script>
+  <script src="script-600.js?v=6.0.2"></script>
 </body></html>

@@ -1412,10 +1412,3 @@ html.audio-entry-open .mobile-cta,html.audio-entry-open .music-toggle,html.audio
 .memory-scroll h2::after{width:2px;height:2px;}
 }
 @media(prefers-reduced-motion:reduce){.memory-scroll h2{animation:none;}}
-
-/* V6.0.2 · pergamena nella sezione delle testimonianze storiche */
-.heritage-window{padding-top:20px;}
-.heritage-window .memory-banner{background:transparent;padding:0;}
-.heritage-window .memory-scroll{width:100%;}
-.heritage-home-description{max-width:820px;margin:-18px auto 34px;text-align:center;font-size:16px;line-height:1.7;color:#665a51;position:relative;}
-@media(max-width:680px){.heritage-window{padding-top:8px;}.heritage-window>.container{width:calc(100% - 28px);}.heritage-home-description{margin:-14px auto 28px;padding:0 8px;text-align:left;}}

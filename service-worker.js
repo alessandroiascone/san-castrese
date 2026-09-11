@@ -1,4 +1,4 @@
-const VERSION = 'san-castrese-v5.9.9-logo';
+const VERSION = 'san-castrese-v6.0.2-posizione';
 const CORE = `${VERSION}-core`;
 const RUNTIME = `${VERSION}-runtime`;
 
@@ -15,8 +15,12 @@ const CORE_FILES = [
   './pasqua.html',
   './urna-2025.html',
   './offline.html',
-  './styles.css',
-  './script-597.js',
+  './styles-602.css',
+  './assets/ingresso-pergamena.png',
+  './assets/pergamena-rossa.png',
+  './assets/divisa-rossa.jpg',
+  './assets/divisa-bianca.jpg',
+  './script-600.js',
   './manifest.webmanifest',
   './assets/logo-san-castrese-3d.png',
   './assets/app-icon-192.png',
@@ -39,7 +43,7 @@ self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
       .then(keys => Promise.all(
-        keys.filter(key => ![CORE, RUNTIME].includes(key)).map(key => caches.delete(key))
+        keys.filter(key => key.startsWith('san-castrese-') && ![CORE, RUNTIME].includes(key)).map(key => caches.delete(key))
       ))
       .then(() => self.clients.claim())
   );

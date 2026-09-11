@@ -1,7 +1,13 @@
-PATCH V5.9.9 - FORZA NUOVO LOGO
+ASSOCIAZIONE SAN CASTRESE — VERSIONE 6.0.2
 
-Sostituisci nella ROOT del repository questi file con quelli della patch.
-NON modificare la cartella assets: i nuovi logo/icon risultano già caricati online.
-Questa patch cambia le versioni cache e il Service Worker, così browser e PWA smettono di usare il vecchio logo memorizzato.
+Apri index.html per consultare il sito in locale.
+Per aggiornare il sito online, estrai questo ZIP e carica tutti i file e la cartella assets nella cartella principale del sito, sostituendo quelli esistenti. Il dominio CNAME è conservato.
 
-Dopo il commit, attendi GitHub Pages 1-2 minuti e riapri il sito.
+Novità: ingresso basato sul riferimento nuova; pulsanti Entra e Installa l’app; pergamena rossa originale con frase in oro nelle pagine; divise rossa e bianca nella home e nella sezione Patrimonio, con occasioni d’uso riprese dalla precedente anteprima e descrizioni dell’abbigliamento raffigurato.
+
+L’installazione richiede il sito online in HTTPS e un browser compatibile. Il mancato avvio della musica non blocca l’ingresso.
+Controlli effettuati: riferimenti locali e ancore delle 11 pagine, risorse dell’app offline e sintassi JavaScript.
+
+V6.0.1: frase centrata nel campo rosso della pergamena; oro metallico con riflesso delicato e punti luce.
+
+V6.0.2: pergamena della home spostata sopra le tre immagini storiche, al posto del precedente titolo introduttivo.
