@@ -1,4 +1,4 @@
-ASSOCIAZIONE SAN CASTRESE — VERSIONE 6.0.2
+ASSOCIAZIONE SAN CASTRESE — VERSIONE 6.1.0
 
 Apri index.html per consultare il sito in locale.
 Per aggiornare il sito online, estrai questo ZIP e carica tutti i file e la cartella assets nella cartella principale del sito, sostituendo quelli esistenti. Il dominio CNAME è conservato.
@@ -11,3 +11,10 @@ Controlli effettuati: riferimenti locali e ancore delle 11 pagine, risorse dell�
 V6.0.1: frase centrata nel campo rosso della pergamena; oro metallico con riflesso delicato e punti luce.
 
 V6.0.2: pergamena della home spostata sopra le tre immagini storiche, al posto del precedente titolo introduttivo.
+
+V6.0.3: effetti delle schede anche sulle divise; testo senza spaziatura forzata e sillabazione, spazi mobile ridotti.
+
+V6.1: nuova sezione home Appuntamenti e cronaca. Le locandine si aprono ingrandite. Le date sono valutate nel fuso Europe/Rome: al termine del giorno indicato l’appuntamento passa in Eventi passati. La cronologia non certifica lo svolgimento effettivo: eventuali annullamenti vanno aggiornati nei testi.
+
+AGGIUNGERE UN EVENTO
+In index.html, nella sezione id="appuntamenti", duplica un articolo agenda-card, assegna un id univoco, aggiorna data-event-date nel formato AAAA-MM-GG, il tag time, i testi e i due collegamenti alla locandina. Inserisci la nuova foto in assets/events. Lo script ordina gli eventi futuri dal più vicino e la cronologia dal più recente. Carica poi il sito aggiornato; non è previsto un pannello di gestione.

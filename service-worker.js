@@ -1,4 +1,4 @@
-const VERSION = 'san-castrese-v6.0.2-posizione';
+const VERSION = 'san-castrese-v6.1.0-agenda';
 const CORE = `${VERSION}-core`;
 const RUNTIME = `${VERSION}-runtime`;
 
@@ -15,12 +15,15 @@ const CORE_FILES = [
   './pasqua.html',
   './urna-2025.html',
   './offline.html',
-  './styles-602.css',
+  './styles-610.css',
   './assets/ingresso-pergamena.png',
   './assets/pergamena-rossa.png',
   './assets/divisa-rossa.jpg',
   './assets/divisa-bianca.jpg',
   './script-600.js',
+  './appuntamenti.js',
+  './assets/events/2026/via-castrensis-19-settembre.jpg',
+  './assets/events/2026/programma-san-castrese-settembre.jpg',
   './manifest.webmanifest',
   './assets/logo-san-castrese-3d.png',
   './assets/app-icon-192.png',

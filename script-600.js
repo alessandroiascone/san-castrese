@@ -274,7 +274,7 @@ window.addEventListener('orientationchange', () => {
 // V6 · Installazione dal nuovo ingresso e dalle pagine interne.
 (() => {
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=6.0.2').catch(() => {}));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=6.1.0').catch(() => {}));
   }
   let deferredPrompt = null;
   let installed = window.matchMedia?.('(display-mode: standalone)').matches || navigator.standalone === true;
