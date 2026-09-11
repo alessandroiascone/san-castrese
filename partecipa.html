@@ -9,25 +9,38 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="San Castrese" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <link rel="manifest" href="manifest.webmanifest?v=5.9.9" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png?v=5.9.9" />
+  <link rel="manifest" href="manifest.webmanifest?v=6.1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png?v=6.1.0" />
 <meta name="description" content="Associazione San Castrese di Via Casalanno 1, Marano di Napoli. Sede, patrimonio, attività, storia, archivio e partecipazione." />
   <meta property="og:title" content="Associazione San Castrese — Marano di Napoli" />
   <meta property="og:description" content="Via Casalanno 1 · Dal 1909 · Memoria, patrimonio, attività e tradizione." />
   <meta property="og:type" content="website" />
   <title>Diventa socio | Associazione San Castrese</title>
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-san-castrese-3d.png?v=5.9.9" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-san-castrese-3d.png?v=6.1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles-610.css?v=6.1.0" />
+  <link rel="stylesheet" href="styles.css?v=6.1.0" />
+
+<style>
+.quick-whatsapp-contact{margin-top:12px;padding:18px 18px 16px;border:1px solid rgba(115,28,43,.16);border-radius:20px;background:linear-gradient(180deg,rgba(115,28,43,.045),rgba(183,138,63,.055));box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.quick-whatsapp-head{display:flex;align-items:center;gap:13px;margin-bottom:12px}
+.quick-whatsapp-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:#731c2b;color:#f5e5bd;font:800 11px/1 Inter,sans-serif;letter-spacing:.08em;border:1px solid rgba(183,138,63,.55);box-shadow:0 8px 18px rgba(68,21,29,.14)}
+.quick-whatsapp-head div{display:grid;gap:2px}
+.quick-whatsapp-head small{font:700 10px/1.2 Inter,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:#8c6a39}
+.quick-whatsapp-head strong{font:600 25px/1.05 "Cormorant Garamond",serif;color:#2e211d}
+.quick-whatsapp-contact p{margin:0 0 14px!important;font-size:14px!important;line-height:1.55!important;color:#685c57!important}
+.quick-whatsapp-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:13px 15px;border-radius:14px;background:linear-gradient(180deg,#7f2033,#651626);color:#fffaf1!important;text-decoration:none;font:700 13px/1.2 Inter,sans-serif;box-shadow:0 10px 20px rgba(79,22,36,.16),inset 0 1px 0 rgba(255,255,255,.13);border:1px solid rgba(183,138,63,.35)}
+.quick-whatsapp-btn span{color:#e7c786;font-size:17px}
+@media(max-width:640px){.quick-whatsapp-contact{padding:16px}.quick-whatsapp-head strong{font-size:23px}.quick-whatsapp-btn{font-size:12px}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
   <header class="site-header" id="top">
     <div class="nav-shell">
-      <a class="brand" href="index.html" aria-label="Associazione San Castrese, torna alla home">
-        <span class="brand-mark" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=5.9.9" alt="" /></span>
+      <a class="brand" href="home.html" aria-label="Associazione San Castrese, torna alla home">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=6.1.0" alt="" /></span>
         <span class="brand-copy"><strong>Associazione San Castrese</strong><small>Marano di Napoli</small></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Apri menu"><span></span><span></span></button>
@@ -44,7 +57,7 @@
   <main id="contenuto">
     <section class="page-hero">
       <div class="container page-hero-inner reveal">
-        <a class="page-back" href="index.html">← Home</a>
+        <a class="page-back" href="home.html">← Home</a>
         <span class="eyebrow"><i></i>Partecipa</span>
         <h1>Partecipa all'Associazione.</h1>
         <p>L’Associazione è aperta a chi desidera contribuire alla custodia e alla trasmissione della memoria di San Castrese.</p>
@@ -85,14 +98,19 @@
 <h3>Via Casalanno 1</h3>
 <p>80016 · Marano di Napoli (NA)</p>
 <hr/>
-<span class="contact-card-label">Contatti diretti</span>
-<p>Telefono, WhatsApp, orari di apertura e social ufficiali dell'Associazione saranno inseriti appena confermati.</p>
-<div aria-hidden="true" class="mini-seal">SC</div>
+<span class="contact-card-label">Contatto rapido</span>
+<div class="quick-whatsapp-contact">
+  <div class="quick-whatsapp-head">
+    <span class="quick-whatsapp-icon" aria-hidden="true">WA</span>
+    <div><small>WhatsApp Associazione</small><strong>338 376 6312</strong></div>
+  </div>
+  <p>Per ricevere informazioni e richiedere l'iscrizione come socio dell'Associazione San Castrese.</p>
+  <a class="quick-whatsapp-btn" href="https://wa.me/393383766312?text=Buongiorno%2C%20vorrei%20ricevere%20informazioni%20per%20iscrivermi%20come%20socio%20dell%27Associazione%20San%20Castrese." rel="noopener" target="_blank">Richiedi iscrizione su WhatsApp <span aria-hidden="true">↗</span></a>
+</div>
 </div>
 </div>
 </section>
-  <section class="memory-banner" aria-label="Tradizione Castrensis"><div class="memory-scroll"><div class="memory-inscription"><span>Tradizione Castrensis</span><h2>Custodire la memoria significa <em>renderla viva nel tempo.</em></h2></div></div></section>
-</main>
+  </main>
   <nav class="mobile-cta" aria-label="Azioni rapide">
     <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Casalanno%201%2C%2080016%20Marano%20di%20Napoli%20NA" rel="noopener" target="_blank"><span>⌖</span>Portami in Associazione</a>
     <a href="partecipa.html"><span>+</span>Diventa socio</a>
@@ -100,7 +118,7 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-brand">
-        <span class="brand-mark small" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=5.9.9" alt="" /></span>
+        <span class="brand-mark small" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=6.1.0" alt="" /></span>
         <div><strong>Associazione San Castrese</strong><small>Castrensis · Culto · Storia · Tradizione</small></div>
       </div>
       <nav aria-label="Link footer">
@@ -117,5 +135,5 @@
     <div class="lightbox-image" id="lightbox-image"></div>
     <div class="lightbox-caption"><small id="lightbox-year"></small><strong id="lightbox-title"></strong><span>Archivio fotografico</span></div>
   </dialog>
-  <script src="script-600.js?v=6.1.0"></script>
+  <script src="script-597.js?v=6.1.0"></script>
 </body></html>
