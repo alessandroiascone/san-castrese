@@ -31,6 +31,34 @@
       #gallery-grid .gallery-item:nth-child(10){grid-column:span 6;grid-row:auto;}
     }
   </style>
+
+  <style>
+    /* Galleria fotografica · Angelo Marra */
+    .marra-section{background:linear-gradient(180deg,#f4eadc 0%,#efe1cf 100%);border-top:1px solid rgba(115,28,43,.08);border-bottom:1px solid rgba(115,28,43,.08)}
+    .marra-head{max-width:820px;margin-bottom:30px}
+    .marra-credit{display:inline-flex;align-items:center;gap:9px;margin-top:12px;padding:8px 12px;border-radius:999px;background:rgba(115,28,43,.07);border:1px solid rgba(115,28,43,.12);font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#731c2b}
+    .marra-credit::before{content:"✦";color:#b78a4b}
+    .marra-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+    .marra-photo{position:relative;overflow:hidden;border:0;padding:0;min-height:320px;border-radius:24px;background:#2b1519;cursor:pointer;box-shadow:0 18px 42px rgba(48,25,20,.10)}
+    .marra-photo:nth-child(1),.marra-photo:nth-child(4){grid-column:span 7}
+    .marra-photo:nth-child(2),.marra-photo:nth-child(3){grid-column:span 5}
+    .marra-photo:nth-child(5),.marra-photo:nth-child(6),.marra-photo:nth-child(7){grid-column:span 4}
+    .marra-photo img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .55s ease,filter .4s ease}
+    .marra-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 54%,rgba(26,8,12,.74) 100%);pointer-events:none}
+    .marra-photo span{position:absolute;z-index:2;left:18px;right:18px;bottom:16px;display:flex;align-items:end;justify-content:space-between;gap:14px;color:#fff;text-align:left}
+    .marra-photo strong{font-family:"Cormorant Garamond",serif;font-size:23px;font-weight:600;line-height:1}
+    .marra-photo i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.48);font-style:normal;font-size:20px}
+    .marra-photo:hover img{transform:scale(1.035);filter:saturate(1.04)}
+    .marra-note{margin-top:20px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.52);border:1px solid rgba(115,28,43,.10);color:#645651;font-size:12px;line-height:1.65}
+    @media(max-width:760px){
+      .marra-grid{grid-template-columns:1fr 1fr;gap:10px}
+      .marra-photo,.marra-photo:nth-child(n){grid-column:auto;min-height:225px;border-radius:18px}
+      .marra-photo:first-child{grid-column:1/-1;min-height:280px}
+      .marra-photo strong{font-size:19px}.marra-photo i{width:30px;height:30px}
+    }
+    @media(max-width:430px){.marra-grid{grid-template-columns:1fr}.marra-photo,.marra-photo:first-child{grid-column:1;min-height:250px}}
+  </style>
+
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -130,6 +158,28 @@
 <div class="source-note reveal"><span aria-hidden="true">ⓘ</span><p>Le immagini di questa sezione documentano la sede di Via Casalanno 1 e alcune delle testimonianze conservate al suo interno.</p></div>
 </div>
 </section>
+
+<section class="marra-section section" id="galleria-angelo-marra">
+  <div class="container">
+    <div class="compact-head marra-head reveal">
+      <span class="eyebrow antique"><i></i>Memoria fotografica · Archivio</span>
+      <h2>Galleria fotografica.<br><em>La tradizione attraverso le immagini.</em></h2>
+      <p>Una raccolta dedicata ai momenti di fede, partecipazione e vita associativa custoditi attraverso lo sguardo fotografico.</p>
+      <span class="marra-credit">Galleria fotografica a cura di Angelo Marra</span>
+    </div>
+    <div class="marra-grid" aria-label="Galleria fotografica a cura di Angelo Marra">
+      <button class="marra-photo reveal" type="button" data-image="assets/gallery/angelo-marra/angelo-marra-01.jpg" data-title="Memoria fotografica I"><img src="assets/gallery/angelo-marra/angelo-marra-01.jpg" alt="Fotografia dell'archivio dell'Associazione San Castrese" loading="lazy"><span><strong>Memoria fotografica I</strong><i>+</i></span></button>
+      <button class="marra-photo reveal reveal-delay" type="button" data-image="assets/gallery/angelo-marra/angelo-marra-02.jpg" data-title="Memoria fotografica II"><img src="assets/gallery/angelo-marra/angelo-marra-02.jpg" alt="Fotografia dell'archivio dell'Associazione San Castrese" loading="lazy"><span><strong>Memoria fotografica II</strong><i>+</i></span></button>
+      <button class="marra-photo reveal" type="button" data-image="assets/gallery/angelo-marra/angelo-marra-03.jpg" data-title="Memoria fotografica III"><img src="assets/gallery/angelo-marra/angelo-marra-03.jpg" alt="Fotografia dell'archivio dell'Associazione San Castrese" loading="lazy"><span><strong>Memoria fotografica III</strong><i>+</i></span></button>
+      <button class="marra-photo reveal" type="button" data-image="assets/gallery/angelo-marra/angelo-marra-04.jpg" data-title="Memoria fotografica IV"><img src="assets/gallery/angelo-marra/angelo-marra-04.jpg" alt="Fotografia dell'archivio dell'Associazione San Castrese" loading="lazy"><span><strong>Memoria fotografica IV</strong><i>+</i></span></button>
+      <button class="marra-photo reveal" type="button" data-image="assets/gallery/angelo-marra/angelo-marra-05.jpg" data-title="Memoria fotografica V"><img src="assets/gallery/angelo-marra/angelo-marra-05.jpg" alt="Fotografia dell'archivio dell'Associazione San Castrese" loading="lazy"><span><strong>Memoria fotografica V</strong><i>+</i></span></button>
+      <button class="marra-photo reveal" type="button" data-image="assets/gallery/angelo-marra/angelo-marra-06.jpg" data-title="Memoria fotografica VI"><img src="assets/gallery/angelo-marra/angelo-marra-06.jpg" alt="Fotografia dell'archivio dell'Associazione San Castrese" loading="lazy"><span><strong>Memoria fotografica VI</strong><i>+</i></span></button>
+      <button class="marra-photo reveal" type="button" data-image="assets/gallery/angelo-marra/angelo-marra-07.jpg" data-title="Memoria fotografica VII"><img src="assets/gallery/angelo-marra/angelo-marra-07.jpg" alt="Fotografia dell'archivio dell'Associazione San Castrese" loading="lazy"><span><strong>Memoria fotografica VII</strong><i>+</i></span></button>
+    </div>
+    <p class="marra-note reveal">Le immagini di questa raccolta sono pubblicate nell'archivio digitale dell'Associazione San Castrese con credito fotografico ad <strong>Angelo Marra</strong>.</p>
+  </div>
+</section>
+
   </main>
   <nav class="mobile-cta" aria-label="Azioni rapide">
     <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Casalanno%201%2C%2080016%20Marano%20di%20Napoli%20NA" rel="noopener" target="_blank"><span>⌖</span>Portami in Associazione</a>
@@ -157,4 +207,21 @@
     <div class="lightbox-caption"><small id="lightbox-year"></small><strong id="lightbox-title"></strong><span>Archivio fotografico</span></div>
   </dialog>
   <script src="script.js?v=6.1.0"></script>
+
+  <script>
+    (() => {
+      const dialog = document.getElementById('lightbox');
+      const image = document.getElementById('lightbox-image');
+      const title = document.getElementById('lightbox-title');
+      const year = document.getElementById('lightbox-year');
+      document.querySelectorAll('.marra-photo').forEach(btn => btn.addEventListener('click', () => {
+        if(!dialog || !image) return;
+        image.style.backgroundImage = `url("${btn.dataset.image}")`;
+        if(title) title.textContent = btn.dataset.title || 'Galleria fotografica';
+        if(year) year.textContent = 'Foto · Angelo Marra';
+        if(typeof dialog.showModal === 'function') dialog.showModal();
+      }));
+    })();
+  </script>
+
 </body></html>

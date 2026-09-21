@@ -129,6 +129,23 @@
     }
   </style>
 
+
+  <style>
+    /* Orari di apertura · Home */
+    .opening-hours{padding:18px 0 28px;background:linear-gradient(180deg,#f3eadf 0%,#efe3d4 100%)}
+    .opening-hours-shell{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:22px;align-items:stretch;padding:24px;border-radius:26px;background:linear-gradient(135deg,#681625 0%,#7d2135 60%,#52101d 100%);box-shadow:0 20px 46px rgba(89,25,39,.18),inset 0 1px 0 rgba(255,255,255,.12);color:#fff9ed}
+    .opening-intro{padding:6px 6px 6px 4px;display:flex;flex-direction:column;justify-content:center}
+    .opening-intro small{font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#e9cb8d;margin-bottom:8px}
+    .opening-intro h2{margin:0;font-family:"Cormorant Garamond",serif;font-size:36px;line-height:.95;font-weight:600}
+    .opening-intro p{margin:10px 0 0;color:#e7dadd;font-size:12px;line-height:1.6}
+    .opening-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .opening-day{padding:16px 15px;border-radius:18px;background:rgba(255,249,239,.09);border:1px solid rgba(238,206,145,.22);display:flex;flex-direction:column;justify-content:center;min-height:108px}
+    .opening-day span{font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#e8c47f}
+    .opening-day strong{margin-top:7px;font-family:"Cormorant Garamond",serif;font-size:23px;line-height:1;color:#fffaf0}
+    .opening-day em{margin-top:4px;font-size:10px;font-style:normal;color:#ddcfd2}
+    @media(max-width:760px){.opening-hours{padding:10px 0 18px}.opening-hours-shell{grid-template-columns:1fr;padding:18px;border-radius:22px;gap:14px}.opening-intro h2{font-size:31px}.opening-grid{grid-template-columns:1fr}.opening-day{min-height:auto;padding:13px 14px;display:grid;grid-template-columns:1fr auto;align-items:center}.opening-day strong{margin-top:0}.opening-day em{grid-column:1/-1;margin-top:2px}}
+  </style>
+
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -159,6 +176,24 @@
           <p>Dal 1909 l'Associazione custodisce e tramanda il legame tra Marano di Napoli e il suo Santo Patrono. Bandiere, registri, insegne e memorie conservate nella sede raccontano oltre un secolo di vita associativa.</p>
           <div class="hero-actions"><a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Casalanno%201%2C%2080016%20Marano%20di%20Napoli%20NA" rel="noopener" target="_blank">Portami in Associazione <span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="partecipa.html">Diventa socio</a></div>
           <div class="hero-facts"><div><strong>Dal 1909</strong><span>Una storia associativa</span></div><div><strong>Via Casalanno 1</strong><span>La nostra sede</span></div><div><strong>2026</strong><span>Iscrizioni aperte</span></div></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="opening-hours" aria-labelledby="opening-hours-title">
+      <div class="container">
+        <div class="opening-hours-shell reveal">
+          <div class="opening-intro">
+            <small>Via Casalanno 1 · Marano di Napoli</small>
+            <h2 id="opening-hours-title">Orari di apertura.</h2>
+            <p>La sede dell'Associazione è aperta nei seguenti giorni per soci, visitatori e per chi desidera conoscere più da vicino la nostra storia.</p>
+          </div>
+          <div class="opening-grid">
+            <div class="opening-day"><span>Mercoledì</span><strong>19:30 – 21:00</strong><em>Apertura serale</em></div>
+            <div class="opening-day"><span>Venerdì</span><strong>19:30 – 21:00</strong><em>Apertura serale</em></div>
+            <div class="opening-day"><span>Sabato</span><strong>16:00 – 19:30</strong><em>Apertura pomeridiana</em></div>
+          </div>
         </div>
       </div>
     </section>
