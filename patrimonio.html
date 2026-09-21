@@ -9,25 +9,89 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="San Castrese" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <link rel="manifest" href="manifest.webmanifest?v=5.9.9" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png?v=5.9.9" />
+  <link rel="manifest" href="manifest.webmanifest?v=6.1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png?v=6.1.0" />
 <meta name="description" content="Associazione San Castrese di Via Casalanno 1, Marano di Napoli. Sede, patrimonio, attività, storia, archivio e partecipazione." />
   <meta property="og:title" content="Associazione San Castrese — Marano di Napoli" />
   <meta property="og:description" content="Via Casalanno 1 · Dal 1909 · Memoria, patrimonio, attività e tradizione." />
   <meta property="og:type" content="website" />
   <title>Patrimonio | Associazione San Castrese</title>
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-san-castrese-3d.png?v=5.9.9" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-san-castrese-3d.png?v=6.1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles-610.css?v=6.1.0" />
+  <link rel="stylesheet" href="styles.css?v=6.1.0" />
+
+  <style>
+    .vestes-section{position:relative;overflow:hidden;background:
+      radial-gradient(circle at 15% 10%,rgba(177,132,73,.08),transparent 24%),
+      linear-gradient(180deg,#fbf6ec 0%,#f5ead9 100%)}
+    .vestes-section::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:
+      radial-gradient(circle at 25% 35%,rgba(93,22,36,.10) 0 1px,transparent 1.5px),
+      radial-gradient(circle at 75% 65%,rgba(177,132,73,.10) 0 1px,transparent 1.5px);background-size:22px 22px,28px 28px}
+    .vestes-section .container{position:relative;z-index:1}
+    .vestes-intro{text-align:center;max-width:860px;margin:0 auto 34px}
+    .vestes-seal{display:inline-flex;align-items:center;gap:10px;margin-bottom:12px;padding:8px 14px;border:1px solid rgba(177,132,73,.34);border-radius:999px;background:rgba(255,252,246,.75);font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#792035}
+    .vestes-seal::before,.vestes-seal::after{content:"✦";color:#b48849;font-size:.8rem}
+    .vestes-intro h2{margin:0;color:#241915;font-family:"Cormorant Garamond",serif;font-size:clamp(2.5rem,6vw,5rem);line-height:.9;font-weight:600}
+    .vestes-intro h2 em{display:block;margin-top:10px;color:#7a2035;font-weight:500}
+    .vestes-intro p{max-width:720px;margin:20px auto 0;color:#6c5a52;line-height:1.75}
+
+    .vestes-premium-grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:stretch}
+    .veste-premium-card{position:relative;overflow:hidden;border-radius:30px;border:1px solid rgba(125,81,43,.22);background:linear-gradient(180deg,#fffdf8 0%,#f8efe1 100%);box-shadow:0 24px 55px rgba(74,38,25,.11),inset 0 1px 0 rgba(255,255,255,.9)}
+    .veste-premium-card::before{content:"";position:absolute;inset:14px;border:1px solid rgba(179,137,76,.24);border-radius:22px;pointer-events:none;z-index:3}
+    .veste-rubric{position:absolute;top:18px;left:18px;z-index:4;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(89,18,32,.92);color:#fff5e6;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;box-shadow:0 10px 20px rgba(89,18,32,.18)}
+    .veste-rubric.gold{background:linear-gradient(180deg,#b78943,#8d642c)}
+    .veste-photo{position:relative;margin:0;padding:22px 22px 0;background:linear-gradient(180deg,rgba(115,28,43,.04),rgba(177,132,73,.025))}
+    .veste-photo::after{content:"";position:absolute;left:50%;bottom:-1px;width:74%;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#b88d4e,transparent)}
+    .veste-photo img{display:block;width:100%;height:auto;max-height:720px;object-fit:contain;border-radius:20px;filter:drop-shadow(0 18px 28px rgba(42,17,15,.13))}
+    .veste-copy{padding:28px 28px 30px;text-align:center}
+    .veste-copy small{display:block;margin-bottom:8px;color:#9a6d32;font-family:"Cormorant Garamond",serif;font-size:.95rem;font-style:italic;letter-spacing:.04em}
+    .veste-copy h3{margin:0;color:#271816;font-family:"Cormorant Garamond",serif;font-size:2.35rem;line-height:.95;font-weight:600}
+    .veste-copy p{margin:14px auto 0;max-width:500px;color:#66534d;line-height:1.7}
+    .veste-symbols{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .veste-symbols span{padding:7px 10px;border-radius:999px;background:rgba(117,29,45,.06);border:1px solid rgba(117,29,45,.10);color:#7b4c54;font-size:.72rem;font-weight:700;letter-spacing:.05em}
+
+    .vestes-epigraph{margin:30px auto 0;max-width:760px;padding:20px 24px;border-top:1px solid rgba(177,132,73,.32);border-bottom:1px solid rgba(177,132,73,.32);text-align:center;color:#6a4b33;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-style:italic;letter-spacing:.05em}
+    .vestes-epigraph strong{color:#7a2035;font-weight:600}
+
+    .vestes-cta{display:flex;justify-content:center;margin-top:26px}
+    .vestes-cta .btn{min-width:260px}
+
+    .vestes-detail{background:linear-gradient(180deg,#fffaf2,#f5e7d5)}
+    .vestes-detail .veste-premium-card{display:grid;grid-template-columns:1fr;align-items:stretch}
+    .vestes-detail .veste-copy{text-align:left}
+    .vestes-detail .veste-copy p{margin-left:0;margin-right:0}
+    .vestes-detail .veste-symbols{justify-content:flex-start}
+
+    @media(min-width:900px){
+      .vestes-detail .veste-premium-card{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}
+      .vestes-detail .veste-photo{padding:28px 16px 28px 28px;display:flex;align-items:center}
+      .vestes-detail .veste-photo::after{display:none}
+      .vestes-detail .veste-copy{padding:46px 40px;display:flex;flex-direction:column;justify-content:center}
+    }
+    @media(max-width:680px){
+      .vestes-section{padding-top:46px!important;padding-bottom:46px!important}
+      .vestes-intro{margin-bottom:24px}
+      .vestes-intro h2{font-size:2.9rem}
+      .vestes-premium-grid{grid-template-columns:1fr;gap:20px}
+      .veste-premium-card{border-radius:24px}
+      .veste-premium-card::before{inset:10px;border-radius:18px}
+      .veste-photo{padding:18px 18px 0}
+      .veste-copy{padding:24px 20px 26px}
+      .veste-copy h3{font-size:2rem}
+      .vestes-epigraph{font-size:1.08rem;padding:16px 14px}
+    }
+  </style>
+
+
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
   <header class="site-header" id="top">
     <div class="nav-shell">
-      <a class="brand" href="index.html" aria-label="Associazione San Castrese, torna alla home">
-        <span class="brand-mark" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=5.9.9" alt="" /></span>
+      <a class="brand" href="home.html" aria-label="Associazione San Castrese, torna alla home">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=6.1.0" alt="" /></span>
         <span class="brand-copy"><strong>Associazione San Castrese</strong><small>Marano di Napoli</small></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Apri menu"><span></span><span></span></button>
@@ -35,6 +99,7 @@
         <a href="sede.html">La sede</a>
         <a href="patrimonio.html">Patrimonio</a>
         <a href="attivita.html">Attività</a>
+        <a href="eventi.html">Eventi</a>
         <a href="storia.html">Storia</a>
         <a href="archivio.html">Archivio</a>
         <a href="partecipa.html" class="nav-cta">Diventa socio</a>
@@ -44,7 +109,7 @@
   <main id="contenuto">
     <section class="page-hero">
       <div class="container page-hero-inner reveal">
-        <a class="page-back" href="index.html">← Home</a>
+        <a class="page-back" href="home.html">← Home</a>
         <span class="eyebrow"><i></i>Castrensis · Reliquie · memoria</span>
         <h1>Il patrimonio da conoscere.</h1>
         <p>Reliquie, insegne, fotografie, documenti e testimonianze: il valore della sede passa anche da ciò che conserva.</p>
@@ -93,10 +158,6 @@
 </div>
 </section>
 
-<section class="uniforms section" id="divise"><div class="container"><div class="compact-head"><span class="eyebrow">Vestes Castrenses</span><h2>Le divise dell’Associazione.<br><em>I segni dell’appartenenza.</em></h2></div><div class="uniform-grid">
-<article class="uniform-card reveal" id="divisa-rossa"><a class="uniform-photo" href="assets/divisa-rossa.jpg" target="_blank" rel="noopener" aria-label="Apri la fotografia della divisa rossa"><img src="assets/divisa-rossa.jpg" alt="Mantello rosso bordato d’oro, abito scuro e insegne associative" width="1024" height="1536" loading="lazy"></a><div class="uniform-copy"><small>Vestes sollemnes</small><h3>La divisa rossa</h3><p>Indossata nelle solennità del martirio di San Castrese, la veste rossa rappresenta il volto più solenne e cerimoniale dell’Associazione. Il rosso, unito ai dettagli dorati e alle insegne, sottolinea il carattere di particolare rilievo della celebrazione.</p><h4>Come si indossa</h4><p>Il mantello rosso si porta sulle spalle, sopra l’abito scuro con gilet, camicia bianca e cravatta bordeaux. La chiusura è al collo; il medaglione scende al centro del petto e l’insegna resta visibile sul lato sinistro di chi lo indossa. Completano l’insieme le scarpe nere.</p></div></article>
-<article class="uniform-card reveal reveal-delay" id="divisa-bianca"><a class="uniform-photo" href="assets/divisa-bianca.jpg" target="_blank" rel="noopener" aria-label="Apri la fotografia della divisa bianca"><img src="assets/divisa-bianca.jpg" alt="Mantello bianco bordato d’oro, colletto rosso, abito scuro e insegne associative" width="1024" height="1536" loading="lazy"></a><div class="uniform-copy"><small>Tempus ordinarium</small><h3>La divisa bianca</h3><p>Utilizzata nel tempo ordinario, la veste bianca accompagna le occasioni associative e devozionali non legate alle solennità del martirio. Mantiene gli elementi identificativi dell’Associazione in una forma più sobria e luminosa.</p><h4>Come si indossa</h4><p>Il mantello bianco si porta sulle spalle, sopra l’abito scuro con gilet, camicia bianca e cravatta bordeaux. Il colletto rosso ricamato d’oro si chiude al collo; il medaglione è al centro del petto e l’insegna sul lato sinistro di chi lo indossa. Completano l’insieme le scarpe nere.</p></div></article>
-</div></div></section>
 <section class="signa-section section" id="signa-castrensia">
   <div class="container">
     <div class="compact-head reveal">
@@ -120,6 +181,45 @@
     </div>
   </div>
 </section>
+
+
+<section class="vestes-section vestes-detail section" id="divise-ufficiali">
+  <div class="container">
+    <div class="vestes-intro reveal">
+      <span class="vestes-seal">Vestes Officiales · Insignia Associativa</span>
+      <h2>Le divise ufficiali dell'Associazione.<em>Solennità e tempo ordinario.</em></h2>
+      <p>Non semplici abiti cerimoniali, ma segni visibili di appartenenza, decoro e servizio. Le due divise distinguono il tempo solenne del martirio dalla vita associativa ordinaria.</p>
+    </div>
+
+    <div class="vestes-premium-grid">
+      <article class="veste-premium-card reveal">
+        <span class="veste-rubric">Solennità del martirio</span>
+        <figure class="veste-photo"><img src="assets/divisa-solennita-martirio.jpg" alt="Divisa ufficiale rossa dell'Associazione San Castrese utilizzata nelle solennità del martirio" loading="lazy"></figure>
+        <div class="veste-copy">
+          <small>Vestes sollemnes</small>
+          <h3>La divisa rossa</h3>
+          <p>Indossata nelle solennità del martirio di San Castrese, la veste rossa rappresenta il volto più solenne e cerimoniale dell'Associazione. Il rosso, unito ai dettagli dorati e alle insegne, sottolinea il carattere di particolare rilievo della celebrazione.</p>
+          <div class="veste-symbols"><span>Solennità</span><span>Martirio</span><span>Rappresentanza ufficiale</span></div>
+        </div>
+      </article>
+
+      <article class="veste-premium-card reveal reveal-delay">
+        <span class="veste-rubric gold">Tempo ordinario</span>
+        <figure class="veste-photo"><img src="assets/divisa-tempo-ordinario.jpg" alt="Divisa ufficiale bianca dell'Associazione San Castrese utilizzata nel tempo ordinario" loading="lazy"></figure>
+        <div class="veste-copy">
+          <small>Tempus ordinarium</small>
+          <h3>La divisa bianca</h3>
+          <p>Utilizzata nel tempo ordinario, la veste bianca accompagna le occasioni associative e devozionali non legate alle solennità del martirio. Mantiene gli elementi identificativi dell'Associazione in una forma più sobria e luminosa.</p>
+          <div class="veste-symbols"><span>Tempo ordinario</span><span>Decoro</span><span>Tradizione</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="vestes-epigraph reveal"><strong>Vestes Officiales.</strong> Due espressioni della stessa identità castrense, al servizio della memoria e della devozione.</div>
+  </div>
+</section>
+
+
 <section class="patrimonio-focus section">
 <div class="container patrimonio-focus-grid">
   <figure class="reveal"><img src="assets/gallery/san-giovanni-paolo-ii.jpg" alt="Statua di San Giovanni Paolo II con reliquiario nella sede" loading="lazy"></figure>
@@ -141,8 +241,7 @@
 </div>
 </div>
 </section>
-  <section class="memory-banner" aria-label="Tradizione Castrensis"><div class="memory-scroll"><div class="memory-inscription"><span>Tradizione Castrensis</span><h2>Custodire la memoria significa <em>renderla viva nel tempo.</em></h2></div></div></section>
-</main>
+  </main>
   <nav class="mobile-cta" aria-label="Azioni rapide">
     <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Casalanno%201%2C%2080016%20Marano%20di%20Napoli%20NA" rel="noopener" target="_blank"><span>⌖</span>Portami in Associazione</a>
     <a href="partecipa.html"><span>+</span>Diventa socio</a>
@@ -150,11 +249,12 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-brand">
-        <span class="brand-mark small" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=5.9.9" alt="" /></span>
+        <span class="brand-mark small" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=6.1.0" alt="" /></span>
         <div><strong>Associazione San Castrese</strong><small>Castrensis · Culto · Storia · Tradizione</small></div>
       </div>
       <nav aria-label="Link footer">
-        <a href="sede.html">Sede</a><a href="patrimonio.html">Patrimonio</a><a href="attivita.html">Attività</a><a href="storia.html">Storia</a><a href="archivio.html">Archivio</a><a href="partecipa.html">Diventa socio</a>
+        <a href="sede.html">Sede</a><a href="patrimonio.html">Patrimonio</a><a href="attivita.html">Attività</a>
+        <a href="eventi.html">Eventi</a><a href="storia.html">Storia</a><a href="archivio.html">Archivio</a><a href="partecipa.html">Diventa socio</a>
       </nav>
     </div>
     <div class="container footer-bottom">
@@ -167,5 +267,5 @@
     <div class="lightbox-image" id="lightbox-image"></div>
     <div class="lightbox-caption"><small id="lightbox-year"></small><strong id="lightbox-title"></strong><span>Archivio fotografico</span></div>
   </dialog>
-  <script src="script-600.js?v=6.1.0"></script>
+  <script src="script-597.js?v=6.1.0"></script>
 </body></html>

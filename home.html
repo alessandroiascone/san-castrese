@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#731c2b" />
+    <meta name="application-name" content="San Castrese" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="San Castrese" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="manifest" href="manifest.webmanifest?v=6.1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180.png?v=6.1.0" />
+<meta name="description" content="Associazione San Castrese di Marano di Napoli. Dal 1909, memoria, culto e tradizione: sede, patrimonio storico, archivio e attività associative." />
+  <meta property="og:title" content="Associazione San Castrese | Marano di Napoli" />
+  <meta property="og:description" content="Dal 1909, memoria, culto e tradizione. Scopri la sede, il patrimonio storico, l’archivio e le attività dell’Associazione San Castrese." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://associazionesancastresemarano.it/home.html" />
+  <meta property="og:site_name" content="Associazione San Castrese" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/alessandroiascone/san-castrese/main/assets/og-san-castrese-storico-v599.jpg" />
+  <meta property="og:image:url" content="https://raw.githubusercontent.com/alessandroiascone/san-castrese/main/assets/og-san-castrese-storico-v599.jpg" />
+  <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/alessandroiascone/san-castrese/main/assets/og-san-castrese-storico-v599.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Associazione San Castrese di Marano di Napoli con la bandiera storica originale del 1909" />
+  <meta property="og:image" content="https://associazionesancastresemarano.it/assets/og-san-castrese-storico-v599.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Associazione San Castrese | Marano di Napoli" />
+  <meta name="twitter:description" content="Dal 1909, memoria, culto e tradizione. Patrimonio storico, archivio e attività dell’Associazione San Castrese." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/alessandroiascone/san-castrese/main/assets/og-san-castrese-storico-v599.jpg" />
+  <link rel="image_src" href="https://raw.githubusercontent.com/alessandroiascone/san-castrese/main/assets/og-san-castrese-storico-v599.jpg" />
+  <meta itemprop="image" content="https://raw.githubusercontent.com/alessandroiascone/san-castrese/main/assets/og-san-castrese-storico-v599.jpg" />
+<link rel="canonical" href="https://associazionesancastresemarano.it/home.html" />
+  <title>Associazione San Castrese | Marano di Napoli</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-san-castrese-3d.png?v=6.1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=6.1.0" />
+
+  <style>
+    .vestes-section{position:relative;overflow:hidden;background:
+      radial-gradient(circle at 15% 10%,rgba(177,132,73,.08),transparent 24%),
+      linear-gradient(180deg,#fbf6ec 0%,#f5ead9 100%)}
+    .vestes-section::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:
+      radial-gradient(circle at 25% 35%,rgba(93,22,36,.10) 0 1px,transparent 1.5px),
+      radial-gradient(circle at 75% 65%,rgba(177,132,73,.10) 0 1px,transparent 1.5px);background-size:22px 22px,28px 28px}
+    .vestes-section .container{position:relative;z-index:1}
+    .vestes-intro{text-align:center;max-width:860px;margin:0 auto 34px}
+    .vestes-seal{display:inline-flex;align-items:center;gap:10px;margin-bottom:12px;padding:8px 14px;border:1px solid rgba(177,132,73,.34);border-radius:999px;background:rgba(255,252,246,.75);font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#792035}
+    .vestes-seal::before,.vestes-seal::after{content:"✦";color:#b48849;font-size:.8rem}
+    .vestes-intro h2{margin:0;color:#241915;font-family:"Cormorant Garamond",serif;font-size:clamp(2.5rem,6vw,5rem);line-height:.9;font-weight:600}
+    .vestes-intro h2 em{display:block;margin-top:10px;color:#7a2035;font-weight:500}
+    .vestes-intro p{max-width:720px;margin:20px auto 0;color:#6c5a52;line-height:1.75}
+
+    .vestes-premium-grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:stretch}
+    .veste-premium-card{position:relative;overflow:hidden;border-radius:30px;border:1px solid rgba(125,81,43,.22);background:linear-gradient(180deg,#fffdf8 0%,#f8efe1 100%);box-shadow:0 24px 55px rgba(74,38,25,.11),inset 0 1px 0 rgba(255,255,255,.9)}
+    .veste-premium-card::before{content:"";position:absolute;inset:14px;border:1px solid rgba(179,137,76,.24);border-radius:22px;pointer-events:none;z-index:3}
+    .veste-rubric{position:absolute;top:18px;left:18px;z-index:4;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(89,18,32,.92);color:#fff5e6;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;box-shadow:0 10px 20px rgba(89,18,32,.18)}
+    .veste-rubric.gold{background:linear-gradient(180deg,#b78943,#8d642c)}
+    .veste-photo{position:relative;margin:0;padding:22px 22px 0;background:linear-gradient(180deg,rgba(115,28,43,.04),rgba(177,132,73,.025))}
+    .veste-photo::after{content:"";position:absolute;left:50%;bottom:-1px;width:74%;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#b88d4e,transparent)}
+    .veste-photo img{display:block;width:100%;height:auto;max-height:720px;object-fit:contain;border-radius:20px;filter:drop-shadow(0 18px 28px rgba(42,17,15,.13))}
+    .veste-copy{padding:28px 28px 30px;text-align:center}
+    .veste-copy small{display:block;margin-bottom:8px;color:#9a6d32;font-family:"Cormorant Garamond",serif;font-size:.95rem;font-style:italic;letter-spacing:.04em}
+    .veste-copy h3{margin:0;color:#271816;font-family:"Cormorant Garamond",serif;font-size:2.35rem;line-height:.95;font-weight:600}
+    .veste-copy p{margin:14px auto 0;max-width:500px;color:#66534d;line-height:1.7}
+    .veste-symbols{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .veste-symbols span{padding:7px 10px;border-radius:999px;background:rgba(117,29,45,.06);border:1px solid rgba(117,29,45,.10);color:#7b4c54;font-size:.72rem;font-weight:700;letter-spacing:.05em}
+
+    .vestes-epigraph{margin:30px auto 0;max-width:760px;padding:20px 24px;border-top:1px solid rgba(177,132,73,.32);border-bottom:1px solid rgba(177,132,73,.32);text-align:center;color:#6a4b33;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-style:italic;letter-spacing:.05em}
+    .vestes-epigraph strong{color:#7a2035;font-weight:600}
+
+    .vestes-cta{display:flex;justify-content:center;margin-top:26px}
+    .vestes-cta .btn{min-width:260px}
+
+    .vestes-detail{background:linear-gradient(180deg,#fffaf2,#f5e7d5)}
+    .vestes-detail .veste-premium-card{display:grid;grid-template-columns:1fr;align-items:stretch}
+    .vestes-detail .veste-copy{text-align:left}
+    .vestes-detail .veste-copy p{margin-left:0;margin-right:0}
+    .vestes-detail .veste-symbols{justify-content:flex-start}
+
+    @media(min-width:900px){
+      .vestes-detail .veste-premium-card{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}
+      .vestes-detail .veste-photo{padding:28px 16px 28px 28px;display:flex;align-items:center}
+      .vestes-detail .veste-photo::after{display:none}
+      .vestes-detail .veste-copy{padding:46px 40px;display:flex;flex-direction:column;justify-content:center}
+    }
+    @media(max-width:680px){
+      .vestes-section{padding-top:46px!important;padding-bottom:46px!important}
+      .vestes-intro{margin-bottom:24px}
+      .vestes-intro h2{font-size:2.9rem}
+      .vestes-premium-grid{grid-template-columns:1fr;gap:20px}
+      .veste-premium-card{border-radius:24px}
+      .veste-premium-card::before{inset:10px;border-radius:18px}
+      .veste-photo{padding:18px 18px 0}
+      .veste-copy{padding:24px 20px 26px}
+      .veste-copy h3{font-size:2rem}
+      .vestes-epigraph{font-size:1.08rem;padding:16px 14px}
+    }
+  </style>
+
+
+
+  <style>
+    .latest-event-strip{padding:28px 0 18px;background:linear-gradient(180deg,#efe3d2 0%,#f6efe5 100%)}
+    .latest-event-card{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);overflow:hidden;border-radius:24px;border:1px solid rgba(115,28,43,.16);background:linear-gradient(180deg,#fffdf8,#f8efe3);box-shadow:0 18px 44px rgba(59,30,24,.09)}
+    .latest-event-card figure{margin:0;min-height:230px;overflow:hidden;background:#3f1720}
+    .latest-event-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
+    .latest-event-card:hover img{transform:scale(1.025)}
+    .latest-event-copy{padding:26px 28px;display:flex;flex-direction:column;justify-content:center}
+    .latest-event-copy small{font:800 9px/1.2 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--wine);margin-bottom:10px}
+    .latest-event-copy h2{margin:0;font:600 clamp(31px,3.4vw,46px)/.96 var(--serif);color:var(--ink)}
+    .latest-event-copy h2 em{color:var(--wine);font-weight:600}
+    .latest-event-copy p{margin:13px 0 18px;color:var(--muted);font-size:13px;line-height:1.7}
+    .latest-event-actions{display:flex;flex-wrap:wrap;gap:10px}
+    .latest-event-actions a{min-width:0}
+    @media(max-width:680px){
+      .latest-event-strip{padding:18px 0 10px}
+      .latest-event-card{grid-template-columns:1fr;border-radius:20px}
+      .latest-event-card figure{min-height:190px;max-height:220px}
+      .latest-event-copy{padding:20px}
+      .latest-event-copy h2{font-size:34px}
+      .latest-event-copy p{font-size:12px}
+      .latest-event-actions{display:grid;grid-template-columns:1fr}
+      .latest-event-actions .btn{width:100%;justify-content:center}
+    }
+  </style>
+
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="site-header" id="top">
+    <div class="nav-shell">
+      <a class="brand" href="home.html" aria-label="Associazione San Castrese, torna alla home">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=6.1.0" alt="" /></span>
+        <span class="brand-copy"><strong>Associazione San Castrese</strong><small>Marano di Napoli</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Apri menu"><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Navigazione principale">
+        <a href="sede.html">La sede</a>
+        <a href="patrimonio.html">Patrimonio</a>
+        <a href="attivita.html">Attività</a>
+        <a href="eventi.html">Eventi</a>
+        <a href="storia.html">Storia</a>
+        <a href="archivio.html">Archivio</a>
+        <a href="partecipa.html" class="nav-cta">Diventa socio</a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenuto">
+    <section class="hero home-hero" aria-labelledby="hero-title">
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <span class="eyebrow"><i></i>Memoria Castrensis · Anno MCMIX</span>
+          <h1 id="hero-title">Associazione San Castrese.<br><em>Memoria, culto e tradizione a Marano.</em></h1>
+          <p>Dal 1909 l'Associazione custodisce e tramanda il legame tra Marano di Napoli e il suo Santo Patrono. Bandiere, registri, insegne e memorie conservate nella sede raccontano oltre un secolo di vita associativa.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Casalanno%201%2C%2080016%20Marano%20di%20Napoli%20NA" rel="noopener" target="_blank">Portami in Associazione <span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="partecipa.html">Diventa socio</a></div>
+          <div class="hero-facts"><div><strong>Dal 1909</strong><span>Una storia associativa</span></div><div><strong>Via Casalanno 1</strong><span>La nostra sede</span></div><div><strong>2026</strong><span>Iscrizioni aperte</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="memory-motto" aria-label="Tradizione Castrensis">
+      <div class="container">
+        <div class="memory-motto-shell reveal">
+          <span>Tradizione Castrensis</span>
+          <p>Custodire la memoria significa <em>renderla viva nel tempo.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="heritage-window section" aria-labelledby="heritage-home-title">
+      <div class="container">
+        <div class="compact-head reveal heritage-head">
+          <span class="eyebrow antique"><i></i>Memoria scripta · Signa Castrensia</span>
+          <h2 id="heritage-home-title">La storia non è soltanto raccontata.<br><em>È ancora qui, custodita.</em></h2>
+          <p>Tra gli ambienti di Via Casalanno 1 sono conservate testimonianze autentiche della vita associativa: dalla bandiera del 1909 ai registri manoscritti, fino alle insegne della storia contemporanea.</p>
+        </div>
+        <div class="heritage-home-grid">
+          <a class="heritage-home-card reveal" href="patrimonio.html#signa-castrensia">
+            <figure><img src="assets/history/bandiera-1909.jpg" alt="Bandiera storica originale dell'Associazione San Castrese, 1909" loading="lazy"></figure>
+            <div><small>Anno MCMIX · 1909</small><strong>La bandiera originale</strong><p>Una delle testimonianze più antiche dell'identità associativa.</p><span>Scopri il patrimonio →</span></div>
+          </a>
+          <a class="heritage-home-card reveal reveal-delay" href="archivio.html#memoria-scripta">
+            <figure><img src="assets/history/verbale-26-dicembre-1944.jpg" alt="Registro manoscritto con verbale del 26 dicembre 1944" loading="lazy"></figure>
+            <div><small>Memoria scripta · 26.XII.1944</small><strong>Il verbale del 1944</strong><p>Una pagina manoscritta documenta la riunione del Consiglio Direttivo del 26 dicembre 1944.</p><span>Entra nell'archivio →</span></div>
+          </a>
+          <a class="heritage-home-card reveal" href="patrimonio.html#signa-castrensia">
+            <figure><img src="assets/history/bandiera-2015.jpg" alt="Bandiera dell'Associazione benedetta da Papa Francesco a Napoli il 21 marzo 2015" loading="lazy"></figure>
+            <div><small>Signum · 21.III.2015</small><strong>La bandiera benedetta</strong><p>Benedetta da Papa Francesco in Piazza del Plebiscito il 21 marzo 2015.</p><span>Leggi la storia →</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="vestes-section section" id="divise-ufficiali-home">
+      <div class="container">
+        <div class="vestes-intro reveal">
+          <span class="vestes-seal">Vestes Officiales · Segni del sodalizio</span>
+          <h2>Le divise ufficiali.<em>Due vesti, una sola appartenenza.</em></h2>
+          <p>La tradizione associativa si esprime anche attraverso le sue vesti ufficiali. La <strong>divisa rossa</strong> accompagna le solennità del martirio; la <strong>divisa bianca</strong> viene indossata nel tempo ordinario.</p>
+        </div>
+        <div class="vestes-premium-grid">
+          <article class="veste-premium-card reveal">
+            <span class="veste-rubric">Solennità del martirio</span>
+            <figure class="veste-photo"><img src="assets/divisa-solennita-martirio.jpg" alt="Divisa ufficiale rossa dell'Associazione San Castrese" loading="lazy"></figure>
+            <div class="veste-copy">
+              <small>Vestes sollemnes</small>
+              <h3>Divisa rossa</h3>
+              <p>Veste di rappresentanza per le celebrazioni solenni dedicate al martirio di San Castrese e per i momenti di particolare rilievo associativo.</p>
+              <div class="veste-symbols"><span>Solennità</span><span>Martirio</span><span>Rappresentanza</span></div>
+            </div>
+          </article>
+          <article class="veste-premium-card reveal reveal-delay">
+            <span class="veste-rubric gold">Tempo ordinario</span>
+            <figure class="veste-photo"><img src="assets/divisa-tempo-ordinario.jpg" alt="Divisa ufficiale bianca dell'Associazione San Castrese" loading="lazy"></figure>
+            <div class="veste-copy">
+              <small>Tempus ordinarium</small>
+              <h3>Divisa bianca</h3>
+              <p>Veste ufficiale del tempo ordinario, utilizzata nelle occasioni associative e devozionali non legate alle solennità del martirio.</p>
+              <div class="veste-symbols"><span>Tempo ordinario</span><span>Decoro</span><span>Continuità</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="vestes-epigraph reveal">«Una stessa fede, un unico servizio a San Castrese.»</div>
+        <div class="vestes-cta reveal"><a class="btn btn-primary" href="patrimonio.html#divise-ufficiali">Conosci le divise ufficiali <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+
+
+    <section class="latest-event-strip" aria-labelledby="latest-event-title">
+      <div class="container">
+        <article class="latest-event-card reveal">
+          <figure><img src="assets/events/via-castrensis-2026/via-castrensis-03.jpg" alt="Via Castrensis 2026 con la statua di San Castrese lungo il percorso" loading="lazy"></figure>
+          <div class="latest-event-copy">
+            <small>Ultimo evento · Via Castrensis 2026</small>
+            <h2 id="latest-event-title">La Via Castrensis.<br><em>Fede e memoria nel territorio.</em></h2>
+            <p>Una nuova pagina della vita associativa, documentata attraverso immagini e momenti condivisi lungo il percorso dedicato a San Castrese.</p>
+            <div class="latest-event-actions">
+              <a class="btn btn-primary" href="via-castrensis-2026.html">Guarda l'evento <span aria-hidden="true">→</span></a>
+              <a class="btn btn-ghost" href="eventi.html">Tutti gli eventi</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="site-hub section" id="scopri">
+      <div class="container">
+        <div class="compact-head reveal"><span class="eyebrow"><i></i>San Castrese · Castrensis</span><h2>Un patrimonio da conoscere.<br><em>Una storia da custodire.</em></h2><p>Scopri la sede di Via Casalanno 1, il patrimonio storico e devozionale, le attività associative e l'archivio della memoria.</p></div>
+        <div class="hub-grid">
+          <a class="hub-card reveal" href="sede.html"><span>01</span><div><small>Via Casalanno 1</small><strong>La sede</strong><p>Conosci gli spazi dell'Associazione e il ruolo della sede nella vita associativa.</p></div><i>↗</i></a>
+          <a class="hub-card reveal" href="patrimonio.html"><span>02</span><div><small>Reliquie & memoria</small><strong>Patrimonio</strong><p>Reliquie, insegne, documenti e testimonianze custodite e valorizzate dall'Associazione.</p></div><i>↗</i></a>
+          <a class="hub-card reveal" href="attivita.html"><span>03</span><div><small>Vita associativa</small><strong>Attività</strong><p>Iniziative culturali, ricorrenze, pellegrinaggi e momenti di partecipazione.</p></div><i>↗</i></a>
+          <a class="hub-card reveal" href="storia.html"><span>04</span><div><small>Dal 1909</small><strong>Storia</strong><p>Dalle origini del sodalizio del 1909 alla storia contemporanea dell'Associazione San Castrese.</p></div><i>↗</i></a>
+          <a class="hub-card reveal" href="archivio.html"><span>05</span><div><small>Immagini & documenti</small><strong>Archivio</strong><p>Fotografie, documenti e memorie che raccontano la storia dell'Associazione e del culto di San Castrese.</p></div><i>↗</i></a>
+          <a class="hub-card hub-card-wine reveal" href="partecipa.html"><span>06</span><div><small>Partecipazione</small><strong>Diventa socio</strong><p>Unisciti all'Associazione e contribuisci alla tutela e alla trasmissione di questa tradizione.</p></div><i>↗</i></a>
+        </div>
+      </div>
+    </section>
+</main>
+  <nav class="mobile-cta" aria-label="Azioni rapide">
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Casalanno%201%2C%2080016%20Marano%20di%20Napoli%20NA" rel="noopener" target="_blank"><span>⌖</span>Portami in Associazione</a>
+    <a href="partecipa.html"><span>+</span>Diventa socio</a>
+  </nav>
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <span class="brand-mark small" aria-hidden="true"><img src="assets/logo-san-castrese-3d.png?v=6.1.0" alt="" /></span>
+        <div><strong>Associazione San Castrese</strong><small>Castrensis · Culto · Storia · Tradizione</small></div>
+      </div>
+      <nav aria-label="Link footer">
+        <a href="sede.html">Sede</a><a href="patrimonio.html">Patrimonio</a><a href="attivita.html">Attività</a>
+        <a href="eventi.html">Eventi</a><a href="storia.html">Storia</a><a href="archivio.html">Archivio</a><a href="partecipa.html">Diventa socio</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Associazione San Castrese · Marano di Napoli</p>
+      <p class="powered-by">Powered by <a href="https://www.relonginformatica.com/" target="_blank" rel="noopener noreferrer">ReLong Informatica</a></p>
+    </div>
+  </footer>
+  <dialog class="lightbox" id="lightbox" aria-label="Anteprima fotografia">
+    <button class="lightbox-close" type="button" aria-label="Chiudi">×</button>
+    <div class="lightbox-image" id="lightbox-image"></div>
+    <div class="lightbox-caption"><small id="lightbox-year"></small><strong id="lightbox-title"></strong><span>Archivio fotografico</span></div>
+  </dialog>
+  <script src="script-597.js?v=6.1.0"></script>
+</body></html>
