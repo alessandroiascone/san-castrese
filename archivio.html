@@ -21,6 +21,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=6.1.0" />
+  <style>
+    /* FIX ARCHIVIO DESKTOP: le nuove tessere 6–10 devono occupare colonne reali della griglia a 12 colonne */
+    @media (min-width: 981px){
+      #gallery-grid .gallery-item:nth-child(6),
+      #gallery-grid .gallery-item:nth-child(7),
+      #gallery-grid .gallery-item:nth-child(8){grid-column:span 4;grid-row:auto;}
+      #gallery-grid .gallery-item:nth-child(9),
+      #gallery-grid .gallery-item:nth-child(10){grid-column:span 6;grid-row:auto;}
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
