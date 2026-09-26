@@ -39,6 +39,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles-610.css?v=6.1.0" />
+<style>
+/* Home · Eventi scorrevoli */
+.home-events-section{padding:48px 0 42px;background:linear-gradient(180deg,#efe3d2 0%,#f7f1e8 100%);overflow:hidden}
+.home-events-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.home-events-head .compact-head{margin:0;max-width:720px}.event-slider-controls{display:flex;gap:9px;flex:0 0 auto}
+.event-slider-arrow{width:44px;height:44px;border-radius:50%;border:1px solid rgba(115,28,43,.18);background:linear-gradient(180deg,#fffdf8,#f1e4d2);color:#731c2b;font:600 24px/1 "Cormorant Garamond",serif;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px rgba(52,28,22,.08);transition:.2s ease}.event-slider-arrow:hover{transform:translateY(-2px);border-color:rgba(115,28,43,.36)}.event-slider-arrow:disabled{opacity:.35;cursor:default;transform:none}
+.event-slider-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;padding:3px 2px 18px;scrollbar-width:none;-ms-overflow-style:none}.event-slider-track::-webkit-scrollbar{display:none}
+.home-event-card{flex:0 0 min(420px,82vw);scroll-snap-align:start;text-decoration:none;color:inherit;overflow:hidden;border-radius:24px;background:linear-gradient(180deg,#fffdf9,#f5ebde);border:1px solid rgba(115,28,43,.14);box-shadow:0 16px 38px rgba(52,28,22,.08);transition:.28s ease;display:flex;flex-direction:column;min-height:455px}.home-event-card:hover{transform:translateY(-4px);box-shadow:0 24px 54px rgba(52,28,22,.13);border-color:rgba(115,28,43,.28)}
+.home-event-card figure{position:relative;margin:0;height:235px;overflow:hidden;background:#43131f}.home-event-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}.home-event-card:hover img{transform:scale(1.025)}.home-event-card.is-poster figure{background:linear-gradient(135deg,#792235,#42111b)}.home-event-card.is-poster img{object-fit:contain;background:#96342f}
+.home-event-status{position:absolute;left:14px;top:14px;z-index:1;padding:7px 10px;border-radius:999px;background:rgba(92,17,34,.92);color:#fff8ec;font:800 8px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 7px 18px rgba(57,14,26,.18)}.home-event-status.gold{background:linear-gradient(180deg,#bd914d,#8e6228)}
+.home-event-copy{padding:21px 21px 23px;display:flex;flex-direction:column;flex:1}.home-event-copy small{font:800 8px/1.2 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#731c2b;margin-bottom:9px}.home-event-copy strong{display:block;font:600 31px/.98 "Cormorant Garamond",serif;color:#241915}.home-event-copy p{margin:11px 0 16px;color:#6b5a54;font-size:11.5px;line-height:1.62;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.home-event-link{margin-top:auto;color:#731c2b;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.event-slider-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:2px}.event-slider-dots{display:flex;gap:7px;align-items:center}.event-slider-dot{width:8px;height:8px;border:0;padding:0;border-radius:50%;background:rgba(115,28,43,.22);cursor:pointer;transition:.2s ease}.event-slider-dot.active{width:24px;border-radius:999px;background:#731c2b}.event-slider-all{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#731c2b;text-decoration:none}.event-slider-all:hover{text-decoration:underline}
+@media(max-width:680px){.home-events-section{padding:40px 0 36px}.home-events-head{align-items:center;margin-bottom:17px}.event-slider-controls{display:none}.home-event-card{flex-basis:86vw;max-width:385px;min-height:420px;border-radius:20px}.home-event-card figure{height:218px}.home-event-copy{padding:18px 18px 20px}.home-event-copy strong{font-size:28px}.event-slider-track{gap:12px;padding-bottom:15px}}
+</style>
 </head>
 <body>
   <div class="audio-entry" id="audio-entry" role="dialog" aria-modal="true" aria-label="Ingresso al sito">
@@ -61,6 +74,7 @@
         <a href="sede.html">La sede</a>
         <a href="patrimonio.html">Patrimonio</a>
         <a href="attivita.html">Attività</a>
+        <a href="eventi.html">Eventi</a>
         <a href="storia.html">Storia</a>
         <a href="archivio.html">Archivio</a>
         <a href="partecipa.html" class="nav-cta">Diventa socio</a>
@@ -80,23 +94,24 @@
       </div>
     </section>
 
-
-    <section class="community-agenda section" id="appuntamenti" aria-labelledby="agenda-title">
+    <section class="home-events-section" id="eventi-home" aria-labelledby="home-events-title">
       <div class="container">
-        <div class="compact-head agenda-heading reveal"><span class="eyebrow">Il calendario della comunità</span><h2 id="agenda-title">Appuntamenti<br><em>e cronaca.</em></h2><p>Le prossime occasioni per ritrovarci e la cronologia degli appuntamenti dedicati a San Castrese.</p></div>
-        <div class="agenda-group" id="agenda-upcoming"><h3 class="agenda-group-title">In programma</h3><div class="agenda-list">
-          <!-- Nuovi appuntamenti: duplicare un articolo agenda-card e aggiornare data-event-date (AAAA-MM-GG), testi e locandina. -->
-          <article class="agenda-card reveal" data-event-date="2026-09-19" id="evento-via-castrensis-2026">
-            <a class="agenda-poster" href="assets/events/2026/via-castrensis-19-settembre.jpg" data-agenda-poster aria-label="Ingrandisci la locandina di Via Castrensis"><img src="assets/events/2026/via-castrensis-19-settembre.jpg" alt="Locandina: escursione e preghiera in onore di San Castrese, sabato 19 settembre, ritrovo Masseria di Foragnano ore 16:00" width="960" height="1105" loading="lazy"><span aria-hidden="true">Ingrandisci locandina</span></a>
-            <div class="agenda-copy"><span class="agenda-status">In programma</span><time datetime="2026-09-19T16:00:00+02:00">Sabato 19 settembre 2026 · ore 16:00</time><h3>Via Castrensis</h3><p class="agenda-subtitle">Escursione e preghiera in onore di San Castrese</p><p>Un incontro nel verde del Bosco della Salandra per celebrare insieme la vita di San Castrese, tra natura e preghiera.</p><dl><div><dt>Ritrovo</dt><dd>Masseria di Foragnano, ore 16:00</dd></div><div><dt>Percorso</dt><dd>Bosco della Salandra</dd></div><div><dt>Insieme a</dt><dd>Associazione San Castrese e Salandra Lovers</dd></div></dl><a class="agenda-link" href="assets/events/2026/via-castrensis-19-settembre.jpg" data-agenda-poster>Leggi la locandina →</a></div>
-          </article>
-        </div></div>
-        <div class="agenda-group agenda-history" id="agenda-past"><h3 class="agenda-group-title">Eventi passati</h3><div class="agenda-list">
-          <article class="agenda-card reveal" data-event-date="2026-09-01" id="evento-sbarco-2026">
-            <a class="agenda-poster" href="assets/events/2026/programma-san-castrese-settembre.jpg" data-agenda-poster aria-label="Ingrandisci il programma della Festa dello Sbarco"><img src="assets/events/2026/programma-san-castrese-settembre.jpg" alt="Programma parrocchiale di settembre 2026 con la Festa dello Sbarco di San Castrese del 1° settembre" width="1344" height="1881" loading="lazy"><span aria-hidden="true">Ingrandisci programma</span></a>
-            <div class="agenda-copy"><span class="agenda-status">In cronologia</span><time datetime="2026-09-01">Martedì 1 settembre 2026</time><h3>Festa dello Sbarco di San Castrese</h3><p class="agenda-subtitle">Memoria dello Sbarco sui lidi campani</p><p>L’appuntamento del 1° settembre nel programma della Parrocchia San Castrese di Marano di Napoli, dedicato alla memoria dello Sbarco e all’avvio dell’anno pastorale 2026/2027.</p><dl><div><dt>Ore 18:00</dt><dd>Avvio dell’anno pastorale e Santo Rosario</dd></div><div><dt>Ore 18:30</dt><dd>Commemorazione dello Sbarco di San Castrese</dd></div><div><dt>Ore 19:00</dt><dd>Solenne Celebrazione Eucaristica, seguita dalla processione del Santo Patrono</dd></div></dl><a class="agenda-link" href="assets/events/2026/programma-san-castrese-settembre.jpg" data-agenda-poster>Leggi il programma di settembre →</a></div>
-          </article>
-        </div></div>
+        <div class="home-events-head">
+          <div class="compact-head reveal">
+            <span class="eyebrow"><i></i>Eventi · Vita associativa</span>
+            <h2 id="home-events-title">Gli appuntamenti.<br><em>Scorri la nostra storia.</em></h2>
+            <p>Il prossimo evento e alcuni momenti già vissuti dall'Associazione, raccolti in uno spazio compatto e scorrevole.</p>
+          </div>
+          <div class="event-slider-controls" aria-label="Controlli eventi"><button class="event-slider-arrow" id="events-prev" type="button" aria-label="Evento precedente">‹</button><button class="event-slider-arrow" id="events-next" type="button" aria-label="Evento successivo">›</button></div>
+        </div>
+        <div class="event-slider-track" id="events-track" tabindex="0" aria-label="Eventi dell'Associazione">
+          <a class="home-event-card is-poster" href="estate-san-castrese-2026.html"><figure><span class="home-event-status gold">Prossimo evento</span><img src="assets/events/estate-san-castrese-2026/locandina-estate-san-castrese-2026.jpg" alt="Locandina Estate San Castrese, domenica 27 settembre 2026" loading="eager"></figure><div class="home-event-copy"><small>27 settembre 2026 · ore 20:00</small><strong>Estate San Castrese</strong><p>Piazzale San Giovanni Paolo II: stand gastronomici e solidali, musica con Gloria Grieco e Mebi ed estrazione finale.</p><span class="home-event-link">Scopri l'evento →</span></div></a>
+          <a class="home-event-card" href="via-castrensis-2026.html"><figure><span class="home-event-status">2026</span><img src="assets/events/via-castrensis-2026/via-castrensis-03.jpg" alt="Via Castrensis 2026" loading="lazy"></figure><div class="home-event-copy"><small>Via Castrensis · 2026</small><strong>Fede e memoria nel territorio</strong><p>Il cammino dedicato a San Castrese tra natura, preghiera, territorio e partecipazione della comunità.</p><span class="home-event-link">Rivivi l'evento →</span></div></a>
+          <a class="home-event-card" href="urna-2025.html"><figure><span class="home-event-status">2025</span><img src="assets/events/urna-2025/urna-candele-frontale.jpg" alt="Peregrinatio del Corpo di San Castrese 2025" loading="lazy"></figure><div class="home-event-copy"><small>1 settembre 2025</small><strong>Peregrinatio del Corpo di San Castrese</strong><p>Il ritorno storico a Marano delle sacre spoglie di San Castrese provenienti da Monreale.</p><span class="home-event-link">Rivivi l'evento →</span></div></a>
+          <a class="home-event-card" href="pasqua.html"><figure><span class="home-event-status">Tempus Passionis</span><img src="assets/events/pasqua/allestimento-passione.jpg" alt="Via Crucis e Pasqua nell'Associazione San Castrese" loading="lazy"></figure><div class="home-event-copy"><small>Via Crucis · Pasqua</small><strong>Tempo della Passione</strong><p>Raccoglimento, segni della Passione e momenti di preghiera vissuti insieme nella sede dell'Associazione.</p><span class="home-event-link">Rivivi l'evento →</span></div></a>
+          <a class="home-event-card" href="natale.html"><figure><span class="home-event-status">Adventus</span><img src="assets/events/natale/presepe-sede.jpg" alt="Natale nella sede dell'Associazione San Castrese" loading="lazy"></figure><div class="home-event-copy"><small>Natale in Associazione</small><strong>Presepe, preghiera e comunità</strong><p>I momenti del Natale vissuti nella sede tra tradizione, benedizione del presepe e vita associativa.</p><span class="home-event-link">Rivivi l'evento →</span></div></a>
+        </div>
+        <div class="event-slider-footer"><div class="event-slider-dots" id="events-dots" aria-label="Seleziona evento"></div><a class="event-slider-all" href="eventi.html">Vedi tutti gli eventi →</a></div>
       </div>
     </section>
 
@@ -147,7 +162,7 @@
         <div><strong>Associazione San Castrese</strong><small>Castrensis · Culto · Storia · Tradizione</small></div>
       </div>
       <nav aria-label="Link footer">
-        <a href="sede.html">Sede</a><a href="patrimonio.html">Patrimonio</a><a href="attivita.html">Attività</a><a href="storia.html">Storia</a><a href="archivio.html">Archivio</a><a href="partecipa.html">Diventa socio</a>
+        <a href="sede.html">Sede</a><a href="patrimonio.html">Patrimonio</a><a href="attivita.html">Attività</a><a href="eventi.html">Eventi</a><a href="storia.html">Storia</a><a href="archivio.html">Archivio</a><a href="partecipa.html">Diventa socio</a>
       </nav>
     </div>
     <div class="container footer-bottom">
@@ -160,6 +175,8 @@
     <div class="lightbox-image" id="lightbox-image"></div>
     <div class="lightbox-caption"><small id="lightbox-year"></small><strong id="lightbox-title"></strong><span>Archivio fotografico</span></div>
   </dialog>
+<script>
+(()=>{const track=document.getElementById('events-track');if(!track)return;const cards=[...track.querySelectorAll('.home-event-card')],prev=document.getElementById('events-prev'),next=document.getElementById('events-next'),dots=document.getElementById('events-dots');const buttons=cards.map((card,index)=>{const b=document.createElement('button');b.type='button';b.className='event-slider-dot'+(index===0?' active':'');b.setAttribute('aria-label','Vai all evento '+(index+1));b.addEventListener('click',()=>card.scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'}));dots.appendChild(b);return b;});const currentIndex=()=>{const left=track.scrollLeft;let best=0,distance=Infinity;cards.forEach((card,i)=>{const d=Math.abs(card.offsetLeft-track.offsetLeft-left);if(d<distance){distance=d;best=i;}});return best;};const update=()=>{const i=currentIndex();buttons.forEach((b,n)=>b.classList.toggle('active',n===i));if(prev)prev.disabled=i===0;if(next)next.disabled=i===cards.length-1;};const go=delta=>{const i=Math.max(0,Math.min(cards.length-1,currentIndex()+delta));cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});};prev?.addEventListener('click',()=>go(-1));next?.addEventListener('click',()=>go(1));track.addEventListener('scroll',()=>requestAnimationFrame(update),{passive:true});window.addEventListener('resize',update);update();})();
+</script>
   <script src="script-600.js?v=6.1.0"></script>
-  <script src="appuntamenti.js?v=6.1.0"></script>
 </body></html>
