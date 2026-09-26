@@ -40,6 +40,13 @@
     @media(max-width:900px){.events-featured{grid-template-columns:1fr}.events-featured figure{min-height:320px}.events-archive{grid-template-columns:1fr 1fr}}
     @media(max-width:680px){.events-featured{border-radius:20px}.events-featured figure{min-height:250px;max-height:300px}.events-featured-copy{padding:24px 20px}.events-featured h2{font-size:43px}.events-archive{grid-template-columns:1fr;gap:13px}.event-archive-card{display:grid;grid-template-columns:118px 1fr}.event-archive-card figure{height:100%;min-height:150px}.event-archive-card div{padding:16px}.event-archive-card strong{font-size:24px}}
   </style>
+
+  <style>
+    .events-featured.is-poster figure{background:linear-gradient(135deg,#7e2434,#43131d);display:flex;align-items:center;justify-content:center}
+    .events-featured.is-poster figure img{object-fit:contain;background:#8f302f}
+    .event-countdown-note{margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(183,137,73,.10);border:1px solid rgba(183,137,73,.18);color:#79572f;font-size:11px;line-height:1.5}
+  </style>
+
 </head>
 <body>
 
@@ -75,17 +82,18 @@
     <section class="section">
       <div class="container">
         <div class="compact-head events-intro reveal">
-          <span class="eyebrow antique"><i></i>Ultimo evento</span>
-          <h2>Via Castrensis 2026.<br><em>Un cammino di fede e memoria.</em></h2>
+          <span class="eyebrow antique"><i></i>Prossimo evento</span>
+          <h2>Estate San Castrese 2026.<br><em>Una serata di comunità.</em></h2>
         </div>
-        <article class="events-featured reveal">
-          <figure><img src="assets/events/via-castrensis-2026/via-castrensis-03.jpg" alt="Via Castrensis 2026: statua di San Castrese portata lungo il percorso" loading="eager"></figure>
+        <article class="events-featured is-poster reveal">
+          <figure><img src="assets/events/estate-san-castrese-2026/locandina-estate-san-castrese-2026.jpg" alt="Locandina Estate San Castrese, 27 settembre 2026" loading="eager"></figure>
           <div class="events-featured-copy">
-            <span class="event-badge">Nuovo · 2026</span>
-            <h2>Via Castrensis.<br><em>Edizione 2026.</em></h2>
-            <p>Il percorso dedicato a San Castrese ha riunito la comunità lungo le sue stazioni, tra preghiera, partecipazione e memoria. Una nuova pagina della vita associativa raccontata attraverso le immagini.</p>
-            <div class="events-year">Marano di Napoli · 2026</div>
-            <div style="margin-top:22px"><a class="btn btn-primary" href="via-castrensis-2026.html">Apri l'evento <span aria-hidden="true">→</span></a></div>
+            <span class="event-badge">Domenica 27 settembre 2026</span>
+            <h2>Estate San Castrese.<br><em>Dalle ore 20:00.</em></h2>
+            <p>Appuntamento al Piazzale San Giovanni Paolo II per una serata di condivisione con stand gastronomici e solidali, musica e l'estrazione finale.</p>
+            <div class="events-year">Marano di Napoli · Piazzale San Giovanni Paolo II</div>
+            <div class="event-countdown-note"><strong>Musica:</strong> Gloria Grieco e la cantautrice Mebi.</div>
+            <div style="margin-top:22px"><a class="btn btn-primary" href="estate-san-castrese-2026.html">Scopri l'evento <span aria-hidden="true">→</span></a></div>
           </div>
         </article>
       </div>
@@ -99,6 +107,10 @@
           <p>Questa raccolta crescerà nel tempo, evento dopo evento, mantenendo ordinata la memoria dell'Associazione.</p>
         </div>
         <div class="events-archive">
+          <a class="event-archive-card reveal" href="via-castrensis-2026.html">
+            <figure><img src="assets/events/via-castrensis-2026/via-castrensis-03.jpg" alt="Via Castrensis 2026" loading="lazy"></figure>
+            <div><small>2026</small><strong>Via Castrensis 2026</strong><p>Il cammino dedicato a San Castrese tra territorio, preghiera e partecipazione.</p><span>Rivivi l'evento →</span></div>
+          </a>
           <a class="event-archive-card reveal" href="urna-2025.html">
             <figure><img src="assets/events/urna-2025/urna-candele-frontale.jpg" alt="Urna di San Castrese a Marano nel 2025" loading="lazy"></figure>
             <div><small>1 settembre 2025</small><strong>Peregrinatio del Corpo di San Castrese</strong><p>Il ritorno storico delle sacre spoglie a Marano.</p><span>Rivivi l'evento →</span></div>
